@@ -11,22 +11,54 @@ frwefesfsdfsfsdfesfsdfsdfdsfsdfwefwgwesfgsdfds
 <div id="calculator">
     <div id="units">
         <div class="unit">
-            <h2>attacker</h2>
-            <div>
-                <div>
-                    <h3>unit select</h3>
-                </div>
-                <div>
-                    <span class="circle1" />
-                </div>
+            <div class="unit-card">
+                <h2>attacker</h2>
+
+                <form id="attacker-input">
+                    <label for="attacker-unit-choice">Unit</label>
+                    <input
+                        type="text"
+                        class="unit-choice"
+                        name="attacker-unit-choice"
+                    />
+
+                    <label for="veteran">Veteran</label>
+                    <input type="checkbox" id="veteran" name="veteran" />
+
+                    <label for="boosted">Combat Boost</label>
+                    <input type="checkbox" id="boosted" name="boosted" />
+
+                    <label for="attacker-health">Health</label>
+                    <input type="text" class="health" name="attacker-health" />
+                </form>
+            </div>
+            <div class="unit-stats">
+                <span class="circle1" />
             </div>
         </div>
         <div class="unit">
-            <h2>defender</h2>
-            <div>
-                <h3>unit select</h3>
+            <div class="unit-card">
+                <h2>defender</h2>
+
+                <form id="defender-input">
+                    <label for="defender-unit-choice">Unit</label>
+                    <input
+                        type="text"
+                        class="unit-choice"
+                        name="defender-unit-choice"
+                    />
+
+                    <label for="veteran">Veteran</label>
+                    <input type="checkbox" id="veteran" name="veteran" />
+
+                    <label for="boosted">Combat Boost</label>
+                    <input type="checkbox" id="boosted" name="boosted" />
+
+                    <label for="defender-health">Health</label>
+                    <input type="text" class="health" name="defender-health" />
+                </form>
             </div>
-            <div>
+            <div class="unit-stats">
                 <span class="circle2" />
             </div>
         </div>
@@ -51,17 +83,35 @@ frwefesfsdfsfsdfesfsdfsdfdsfsdfwefwgwesfgsdfds
         display: inline-block;
     }
 
+    .unit div {
+        display: inline-block;
+    }
+
+    #attacker-input {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #defender-input {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .unit-stats {
+        margin: 30px;
+    }
+
     .circle1 {
-        height: 25px;
-        width: 25px;
+        height: 50px;
+        width: 50px;
         background-color: blue;
         border-radius: 50%;
         display: inline-block;
     }
 
     .circle2 {
-        height: 25px;
-        width: 25px;
+        height: 50px;
+        width: 50px;
         background-color: red;
         border-radius: 50%;
         display: inline-block;
