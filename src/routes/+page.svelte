@@ -10,11 +10,10 @@ frwefesfsdfsfsdfesfsdfsdfdsfsdfwefwgwesfgsdfds
 
 <div id="calculator">
     <div id="units">
-        <div class="unit">
-            <div class="unit-card">
-                <h2>attacker</h2>
-
+        <div class="unit-card">
+            <div>
                 <form id="attacker-input">
+                    <h2>attacker</h2>
                     <label for="attacker-unit-choice">Unit</label>
                     <input
                         type="text"
@@ -32,15 +31,20 @@ frwefesfsdfsfsdfesfsdfsdfdsfsdfwefwgwesfgsdfds
                     <input type="text" class="health" name="attacker-health" />
                 </form>
             </div>
+
             <div class="unit-stats">
                 <span class="circle1" />
             </div>
         </div>
-        <div class="unit">
-            <div class="unit-card">
-                <h2>defender</h2>
 
+        <div class="unit-card">
+            <div class="unit-stats">
+                <span class="circle2" />
+            </div>
+
+            <div>
                 <form id="defender-input">
+                    <h2>defender</h2>
                     <label for="defender-unit-choice">Unit</label>
                     <input
                         type="text"
@@ -57,9 +61,6 @@ frwefesfsdfsfsdfesfsdfsdfdsfsdfwefwgwesfgsdfds
                     <label for="defender-health">Health</label>
                     <input type="text" class="health" name="defender-health" />
                 </form>
-            </div>
-            <div class="unit-stats">
-                <span class="circle2" />
             </div>
         </div>
     </div>
@@ -83,8 +84,10 @@ frwefesfsdfsfsdfesfsdfsdfdsfsdfwefwgwesfgsdfds
         display: inline-block;
     }
 
-    .unit div {
-        display: inline-block;
+    .unit-card {
+        border: solid black;
+        display: flex;
+        margin: 3px;
     }
 
     #attacker-input {
