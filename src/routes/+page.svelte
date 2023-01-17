@@ -9,7 +9,7 @@
 frwefesfsdfsfsdfesfsdfsdfdsfsdfwefwgwesfgsdfds
 
 <div id="calculator">
-    <div id="units">
+    <div class="units">
         <div class="unit-card">
             <div>
                 <form id="attacker-input">
@@ -38,10 +38,6 @@ frwefesfsdfsfsdfesfsdfsdfdsfsdfwefwgwesfgsdfds
         </div>
 
         <div class="unit-card">
-            <div class="unit-stats">
-                <span class="circle2" />
-            </div>
-
             <div>
                 <form id="defender-input">
                     <h2>defender</h2>
@@ -62,6 +58,10 @@ frwefesfsdfsfsdfesfsdfsdfdsfsdfwefwgwesfgsdfds
                     <input type="text" class="health" name="defender-health" />
                 </form>
             </div>
+
+            <div class="unit-stats">
+                <span class="circle2" />
+            </div>
         </div>
     </div>
     <button>calculate</button>
@@ -73,21 +73,19 @@ frwefesfsdfsfsdfesfsdfsdfdsfsdfwefwgwesfgsdfds
         border: solid red;
     }
 
-    #units {
+    .units {
         margin: 5px;
         border: solid orange;
     }
 
-    .unit {
-        border: solid lightgray;
-        margin: 5px;
-        display: inline-block;
-    }
-
     .unit-card {
         border: solid black;
-        display: flex;
+        display: inline-block;
         margin: 3px;
+    }
+
+    .unit-card div {
+        display: inline-block;
     }
 
     #attacker-input {
