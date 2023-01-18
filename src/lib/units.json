@@ -91,6 +91,181 @@
         "range": 1
     },
     "boat": {
+        "health": "varies",
+        "attack": 1,
+        "defence": 1,
+        "movement": 2,
+        "range": 2
+    },
+    "ship": {
+        "health": "varies",
+        "attack": 2,
+        "defence": 2,
+        "movement": 3,
+        "range": 2
+    },
+    "battleship": {
+        "health": "varies",
+        "attack": 4,
+        "defence": 3,
+        "movement": 3,
+        "range": 2
+    },
+    "dinghy": {
+        "health": 5,
+        "attack": 0,
+        "defence": 0.5,
+        "movement": 2,
+        "range": 1
+    },
+    "amphibian": {
+        "health": 10,
+        "attack": 2,
+        "defence": 1,
+        "movement": 2,
+        "range": 1
+    },
+    "tridention": {
+        "health": 5,
+        "attack": 0,
+        "defence": 0.5,
+        "movement": 2,
+        "range": 1
+    },
+    "crab": {
+        "health": 40,
+        "attack": 4,
+        "defence": 4,
+        "movement": 1,
+        "range": 1
+    },
+    "polytaur": {
+        "health": 15,
+        "attack": 3,
+        "defence": 1,
+        "movement": 1,
+        "range": 1
+    },
+    "navalon": {
+        "health": 30,
+        "attack": 4,
+        "defence": 4,
+        "movement": 2,
+        "range": 1
+    },
+    "dragonegg": {
+        "health": 10,
+        "attack": 0,
+        "defence": 2,
+        "movement": 1,
+        "range": "N/A"
+    },
+    "babydragon": {
+        "health": 15,
+        "attack": 3,
+        "defence": 3,
+        "movement": 2,
+        "range": 1
+    },
+    "firedragon": {
+        "health": 20,
+        "attack": 4,
+        "defence": 3,
+        "movement": 3,
+        "range": 2
+    },
+    "icearcher": {
+        "health": 10,
+        "attack": 0.1,
+        "defence": 1,
+        "movement": 1,
+        "range": 2
+    },
+    "battlesled": {
+        "health": 15,
+        "attack": 3,
+        "defence": 2,
+        "movement": 2,
+        "range": 1
+    },
+    "mooni": {
+        "health": 10,
+        "attack": 0,
+        "defence": 2,
+        "movement": 1,
+        "range": 1
+    },
+    "icefortress": {
+        "health": 20,
+        "attack": 4,
+        "defence": 3,
+        "movement": 1,
+        "range": 2
+    },
+    "gaami": {
+        "health": 30,
+        "attack": 4,
+        "defence": 4,
+        "movement": 1,
+        "range": 1
+    },
+    "hexapod": {
+        "health": 5,
+        "attack": 3,
+        "defence": 1,
+        "movement": 2,
+        "range": 1
+    },
+    "kiton": {
+        "health": 15,
+        "attack": 1,
+        "defence": 3,
+        "movement": 1,
+        "range": 1
+    },
+    "phychi": {
+        "health": 5,
+        "attack": 1,
+        "defence": 1,
+        "movement": 2,
+        "range": 2
+    },
+    "shaman": {
+        "health": 10,
+        "attack": 1,
+        "defence": 1,
+        "movement": 1,
+        "range": 1
+    },
+    "raychi": {
+        "health": 15,
+        "attack": 3,
+        "defence": 2,
+        "movement": 3,
+        "range": 1
+    },
+    "exida": {
+        "health": 10,
+        "attack": 3,
+        "defence": 1,
+        "movement": 1,
+        "range": 1
+    },
+    "doomux": {
+        "health": 20,
+        "attack": 4,
+        "defence": 2,
+        "movement": 3,
+        "range": 1
+    },
+    "centipede": {
+        "health": 20,
+        "attack": 4,
+        "defence": 3,
+        "movement": 2,
+        "range": 1
+    },
+    "segment": {
         "health": 10,
         "attack": 2,
         "defence": 2,
