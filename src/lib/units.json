@@ -1,0 +1,100 @@
+{
+    "warrior": {
+        "health": 10,
+        "attack": 2,
+        "defence": 2,
+        "movement": 1,
+        "range": 1
+    },
+    "archer": {
+        "health": 10,
+        "attack": 2,
+        "defence": 1,
+        "movement": 1,
+        "range": 2
+    },
+    "defender": {
+        "health": 15,
+        "attack": 1,
+        "defence": 3,
+        "movement": 1,
+        "range": 1
+    },
+    "rider": {
+        "health": 10,
+        "attack": 2,
+        "defence": 1,
+        "movement": 2,
+        "range": 1
+    },
+    "cloak": {
+        "health": 5,
+        "attack": 0,
+        "defence": 0.5,
+        "movement": 2,
+        "range": 1
+    },
+    "dagger": {
+        "health": 10,
+        "attack": 2,
+        "defence": 2,
+        "movement": 1,
+        "range": 1
+    },
+    "mindbender": {
+        "health": 10,
+        "attack": 0,
+        "defence": 1,
+        "movement": 1,
+        "range": 1
+    },
+    "swordsman": {
+        "health": 15,
+        "attack": 3,
+        "defence": 3,
+        "movement": 1,
+        "range": 1
+    },
+    "catapult": {
+        "health": 10,
+        "attack": 4,
+        "defence": 0,
+        "movement": 1,
+        "range": 3
+    },
+    "knight": {
+        "health": 10,
+        "attack": 3.5,
+        "defence": 1,
+        "movement": 3,
+        "range": 1
+    },
+    "giant": {
+        "health": 40,
+        "attack": 5,
+        "defence": 4,
+        "movement": 1,
+        "range": 1
+    },
+    "bunny": {
+        "health": 20,
+        "attack": 5,
+        "defence": 1,
+        "movement": 1,
+        "range": 1
+    },
+    "bunta": {
+        "health": 20,
+        "attack": 5,
+        "defence": 1,
+        "movement": 1,
+        "range": 1
+    },
+    "boat": {
+        "health": 10,
+        "attack": 2,
+        "defence": 2,
+        "movement": 1,
+        "range": 1
+    }
+}
