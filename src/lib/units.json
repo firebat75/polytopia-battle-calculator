@@ -4,272 +4,311 @@
         "attack": 2,
         "defence": 2,
         "movement": 1,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "archer": {
         "health": 10,
         "attack": 2,
         "defence": 1,
         "movement": 1,
-        "range": 2
+        "range": 2,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/4/4a/ArcherI.png"
     },
     "defender": {
         "health": 15,
         "attack": 1,
         "defence": 3,
         "movement": 1,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "rider": {
         "health": 10,
         "attack": 2,
         "defence": 1,
         "movement": 2,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "cloak": {
         "health": 5,
         "attack": 0,
         "defence": 0.5,
         "movement": 2,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "dagger": {
         "health": 10,
         "attack": 2,
         "defence": 2,
         "movement": 1,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "mindbender": {
         "health": 10,
         "attack": 0,
         "defence": 1,
         "movement": 1,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "swordsman": {
         "health": 15,
         "attack": 3,
         "defence": 3,
         "movement": 1,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "catapult": {
         "health": 10,
         "attack": 4,
         "defence": 0,
         "movement": 1,
-        "range": 3
+        "range": 3,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "knight": {
         "health": 10,
         "attack": 3.5,
         "defence": 1,
         "movement": 3,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "giant": {
         "health": 40,
         "attack": 5,
         "defence": 4,
         "movement": 1,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "bunny": {
         "health": 20,
         "attack": 5,
         "defence": 1,
         "movement": 1,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "bunta": {
         "health": 20,
         "attack": 5,
         "defence": 1,
         "movement": 1,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "boat": {
         "health": "varies",
         "attack": 1,
         "defence": 1,
         "movement": 2,
-        "range": 2
+        "range": 2,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "ship": {
         "health": "varies",
         "attack": 2,
         "defence": 2,
         "movement": 3,
-        "range": 2
+        "range": 2,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "battleship": {
         "health": "varies",
         "attack": 4,
         "defence": 3,
         "movement": 3,
-        "range": 2
+        "range": 2,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "dinghy": {
         "health": 5,
         "attack": 0,
         "defence": 0.5,
         "movement": 2,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "amphibian": {
         "health": 10,
         "attack": 2,
         "defence": 1,
         "movement": 2,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "tridention": {
         "health": 5,
         "attack": 0,
         "defence": 0.5,
         "movement": 2,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "crab": {
         "health": 40,
         "attack": 4,
         "defence": 4,
         "movement": 1,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "polytaur": {
         "health": 15,
         "attack": 3,
         "defence": 1,
         "movement": 1,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "navalon": {
         "health": 30,
         "attack": 4,
         "defence": 4,
         "movement": 2,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "dragonegg": {
         "health": 10,
         "attack": 0,
         "defence": 2,
         "movement": 1,
-        "range": "N/A"
+        "range": "N/A",
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "babydragon": {
         "health": 15,
         "attack": 3,
         "defence": 3,
         "movement": 2,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "firedragon": {
         "health": 20,
         "attack": 4,
         "defence": 3,
         "movement": 3,
-        "range": 2
+        "range": 2,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "icearcher": {
         "health": 10,
         "attack": 0.1,
         "defence": 1,
         "movement": 1,
-        "range": 2
+        "range": 2,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "battlesled": {
         "health": 15,
         "attack": 3,
         "defence": 2,
         "movement": 2,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "mooni": {
         "health": 10,
         "attack": 0,
         "defence": 2,
         "movement": 1,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "icefortress": {
         "health": 20,
         "attack": 4,
         "defence": 3,
         "movement": 1,
-        "range": 2
+        "range": 2,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "gaami": {
         "health": 30,
         "attack": 4,
         "defence": 4,
         "movement": 1,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "hexapod": {
         "health": 5,
         "attack": 3,
         "defence": 1,
         "movement": 2,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "kiton": {
         "health": 15,
         "attack": 1,
         "defence": 3,
         "movement": 1,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "phychi": {
         "health": 5,
         "attack": 1,
         "defence": 1,
         "movement": 2,
-        "range": 2
+        "range": 2,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "shaman": {
         "health": 10,
         "attack": 1,
         "defence": 1,
         "movement": 1,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "raychi": {
         "health": 15,
         "attack": 3,
         "defence": 2,
         "movement": 3,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "exida": {
         "health": 10,
         "attack": 3,
         "defence": 1,
         "movement": 1,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "doomux": {
         "health": 20,
         "attack": 4,
         "defence": 2,
         "movement": 3,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "centipede": {
         "health": 20,
         "attack": 4,
         "defence": 3,
         "movement": 2,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     },
     "segment": {
         "health": 10,
         "attack": 2,
         "defence": 2,
         "movement": 1,
-        "range": 1
+        "range": 1,
+        "img": "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
     }
 }

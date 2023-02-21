@@ -1,5 +1,6 @@
 <script>
     import AttackerCard from "../components/AttackerCard.svelte";
+    import UnitSelect from "../components/UnitSelect.svelte";
 </script>
 
 <svelte:head>
@@ -24,6 +25,8 @@ frwefesfsdfsfsdfesfsdfsdfdsfsdfwefwgwesfgsdfds
     </div>
     <button>calculate</button>
 </div>
+
+<UnitSelect/>
 
 <style>
     #calculator {

@@ -12,17 +12,19 @@
     $: unit = fields.unit;
     // $: console.log(unit);
 
-    import data from "../lib/units.json";
-    console.log(data);
-    for (const unit in data) {
-        console.log(unit);
-    }
+    // import data from "../lib/units.json";
+    // console.log(data);
+    // for (const unit in data) {
+    //     console.log(unit);
+    // }
 </script>
 
 <div class="unit-card">
     <div id="attacker-input-div">
         <form id="attacker-input-form">
             <h2>attacker</h2>
+
+            <div class="inline">
             <label for="attacker-unit-choice">Unit</label>
             <input
                 type="text"
@@ -30,30 +32,37 @@
                 name="attacker-unit-choice"
                 bind:value={fields.unit}
             />
+            </div>
 
-            <label for="veteran">Veteran</label>
-            <input
-                type="checkbox"
-                id="veteran"
-                name="veteran"
-                bind:checked={fields.veteran}
+            <div class="inline">
+                <label for="veteran">Veteran</label>
+                <input
+                    type="checkbox"
+                    id="veteran"
+                    name="veteran"
+                    bind:checked={fields.veteran}
             />
+            </div>
 
-            <label for="boosted">Combat Boost</label>
-            <input
-                type="checkbox"
-                id="boosted"
-                name="boosted"
-                bind:checked={fields.boosted}
-            />
+            <div class="inline">
+                <label for="boosted">Combat Boost</label>
+                <input
+                    type="checkbox"
+                    id="boosted"
+                    name="boosted"
+                    bind:checked={fields.boosted}
+                />
+            </div>
 
-            <label for="attacker-health">Health</label>
-            <input
-                type="text"
-                class="health"
-                name="attacker-health"
-                bind:value={fields.health}
-            />
+            <div class="inline">
+                <label for="attacker-health">Health</label>
+                <input
+                    type="text"
+                    class="health"
+                    name="attacker-health"
+                    bind:value={fields.health}
+                />
+            </div>
         </form>
     </div>
 
@@ -74,6 +83,14 @@
 </div>
 
 <style>
+    label {
+        padding: 5px;
+    }
+
+    input {
+        padding: 3px;
+    }
+
     .unit-card div {
         display: inline-flex;
     }
@@ -92,5 +109,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .health {
+        width: 20px;
+    }
+
+    .unit-choice {
+        width: 68px;
     }
 </style>
