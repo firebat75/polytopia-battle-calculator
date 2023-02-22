@@ -2,6 +2,10 @@
     let input = "warrior";
     import data from "../lib/units.json";
 
+    let textInput = "";
+    $: textInput = textInput;
+    $: console.log(textInput)
+
     let units = [];
     for (const unit in data) {
         units.push(unit)
@@ -10,6 +14,18 @@
 </script>
 
 <h1>TESTESTESTETS</h1>
+
+
+
+<div>
+    <label for="attacker-unit-choice">Input Unit</label>
+    <input
+        type="text"
+        class="unit-choice"
+        name="attacker-unit-choice"
+        bind:value={textInput}
+    />
+</div>
 
 <ul>
     {#each units as unit}
