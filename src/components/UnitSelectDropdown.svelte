@@ -12,7 +12,6 @@
     let selected = "warrior";
 
     function update() {
-        // aUnit.set(selected);
 		dispatch('selection', {
 			text: selected
 		});

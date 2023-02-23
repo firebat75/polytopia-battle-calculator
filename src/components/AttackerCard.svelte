@@ -33,6 +33,16 @@
 
     function selection(e) {
         console.log(e.detail.text);
+        fields.unit = e.detail.text;
+        console.log(data[fields.unit].health)
+        stats = {
+            maxHealth: data[fields.unit].health,
+            health: data[fields.unit].health,
+            attack: data[fields.unit].attack,
+            defence: data[fields.unit].defence,
+            movement: data[fields.unit].movement,
+            range: data[fields.unit].range
+        }
     }
 
 </script>
@@ -44,12 +54,6 @@
 
             <div class="inline">
             <label for="attacker-unit-choice">Unit</label>
-            <input
-                type="text"
-                class="unit-choice"
-                name="attacker-unit-choice"
-                bind:value={fields.unit}
-            />
             <UnitSelectDropdown on:selection={selection}/>
             </div>
 
@@ -87,6 +91,8 @@
 
     <div class="unit-stats">
         <div class="stat-text">
+            <h3>Unit: {fields.unit}</h3>
+            <h3>Max Health: {stats.maxHealth}</h3>
             <h3>Health: {stats.health}</h3>
             <h3>Attack: {stats.attack}</h3>
             <h3>Defence: {stats.defence}</h3>
