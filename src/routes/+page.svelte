@@ -1,7 +1,5 @@
 <script>
     import AttackerCard from "../components/AttackerCard.svelte";
-    import UnitSelect from "../components/UnitSelect.svelte";
-    import UnitSelectDropdown from "../components/UnitSelectDropdown.svelte";
 
     import { aStats } from "../lib/stores";
 
@@ -32,8 +30,6 @@ frwefesfsdfsfsdfesfsdfsdfdsfsdfwefwgwesfgsdfds
     </div>
     <button on:click={printStats}>calculate</button>
 </div>
-
-<UnitSelectDropdown/>
 
 <style>
     #calculator {

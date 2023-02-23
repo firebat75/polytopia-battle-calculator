@@ -31,6 +31,8 @@
         range: 1
     }
 
+    let naval = false;
+
     function selection(e) {
         console.log(e.detail.text);
         fields.unit = e.detail.text;
@@ -43,6 +45,17 @@
             movement: data[fields.unit].movement,
             range: data[fields.unit].range
         }
+        if (['boat', 'ship', 'battleship'].includes(fields.unit)) {
+            naval = true;
+        } else {
+            naval = false;
+        }
+    }
+
+    function selectionNaval(e) {
+        console.log("CARRYING " + e.detail.text);
+        stats.maxHealth = data[e.detail.text].health
+        stats.health = data[e.detail.text].health
     }
 
 </script>
@@ -56,6 +69,13 @@
             <label for="attacker-unit-choice">Unit</label>
             <UnitSelectDropdown on:selection={selection}/>
             </div>
+
+            {#if naval}
+                <div class="inline">
+                    <label for="attacker-naval-carry">Carrying</label>
+                    <UnitSelectDropdown on:selection={selectionNaval}/>
+                </div>
+            {/if}
 
             <div class="inline">
                 <label for="veteran">Veteran</label>
