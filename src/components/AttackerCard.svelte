@@ -31,6 +31,10 @@
         range: 1
     }
 
+    function selection(e) {
+        console.log(e.detail.text);
+    }
+
 </script>
 
 <div class="unit-card">
@@ -46,7 +50,7 @@
                 name="attacker-unit-choice"
                 bind:value={fields.unit}
             />
-            <UnitSelectDropdown/>
+            <UnitSelectDropdown on:selection={selection}/>
             </div>
 
             <div class="inline">
