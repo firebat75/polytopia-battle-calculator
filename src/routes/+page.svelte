@@ -1,6 +1,13 @@
 <script>
     import AttackerCard from "../components/AttackerCard.svelte";
     import UnitSelect from "../components/UnitSelect.svelte";
+    import UnitSelectDropdown from "../components/UnitSelectDropdown.svelte";
+
+    import { aStats } from "../lib/stores";
+
+    function printStats() {
+        console.log(aStats);
+    }
 </script>
 
 <svelte:head>
@@ -23,10 +30,10 @@ frwefesfsdfsfsdfesfsdfsdfdsfsdfwefwgwesfgsdfds
             <AttackerCard />
         </div>
     </div>
-    <button>calculate</button>
+    <button on:click={printStats}>calculate</button>
 </div>
 
-<UnitSelect/>
+<UnitSelectDropdown/>
 
 <style>
     #calculator {

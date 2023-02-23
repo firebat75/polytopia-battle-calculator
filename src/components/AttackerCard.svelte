@@ -1,4 +1,5 @@
 <script>
+    import UnitSelectDropdown from "../components/UnitSelectDropdown.svelte";
     let fields = {
         unit: "warrior",
         veteran: false,
@@ -12,11 +13,24 @@
     $: unit = fields.unit;
     // $: console.log(unit);
 
-    // import data from "../lib/units.json";
-    // console.log(data);
-    // for (const unit in data) {
-    //     console.log(unit);
-    // }
+    import data from "../lib/units.json";
+    let units = [];
+    console.log(data);
+    for (const unit in data) {
+        units.push(unit);
+    }
+    console.log(units)
+
+    export let stats = {};
+    stats = {
+        maxHealth: 10,
+        health: 10,
+        attack: 2,
+        defence: 2,
+        movement: 1,
+        range: 1
+    }
+
 </script>
 
 <div class="unit-card">
@@ -32,6 +46,7 @@
                 name="attacker-unit-choice"
                 bind:value={fields.unit}
             />
+            <UnitSelectDropdown/>
             </div>
 
             <div class="inline">
@@ -67,12 +82,16 @@
     </div>
 
     <div class="unit-stats">
-        <div>
-            <h3>Health: {fields.health}</h3>
+        <div class="stat-text">
+            <h3>Health: {stats.health}</h3>
+            <h3>Attack: {stats.attack}</h3>
+            <h3>Defence: {stats.defence}</h3>
+            <h3>Movement: {stats.movement}</h3>
+            <h3>Range: {stats.range}</h3>
         </div>
         <div>
             <img
-                src="https://www.w3schools.com/images/colorpicker2000.png"
+                src="https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
                 alt="unit placeholder"
             />
         </div>
@@ -82,7 +101,13 @@
     </div>
 </div>
 
+
+
+
 <style>
+    .stat-text {
+        display:block !important; 
+    }
     label {
         padding: 5px;
     }
