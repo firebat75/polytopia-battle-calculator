@@ -7,11 +7,11 @@
         health: 10,
     };
 
-    // $: console.log(fields);
+    const nonVet = ['dagger','polytaur','navalon','bunny','bunta','boat','ship','battleship','dingy','pirate'];
+    const ships = ['boat','ship','battleship'];
 
     let unit = fields.unit;
     $: unit = fields.unit;
-    // $: console.log(unit);
 
     import data from "../lib/units.json";
     let units = [];
@@ -32,6 +32,7 @@
     }
 
     let naval = false;
+    let vetAble = true;
 
     function selection(e) {
         console.log(e.detail.text);
@@ -45,10 +46,15 @@
             movement: data[fields.unit].movement,
             range: data[fields.unit].range
         }
-        if (['boat', 'ship', 'battleship'].includes(fields.unit)) {
+        if (ships.includes(fields.unit)) {
             naval = true;
         } else {
             naval = false;
+        }
+        if (nonVet.includes(fields.unit)) {
+            vetAble = false;
+        } else {
+            vetAble = true;
         }
     }
 
@@ -77,15 +83,17 @@
                 </div>
             {/if}
 
-            <div class="inline">
-                <label for="veteran">Veteran</label>
-                <input
-                    type="checkbox"
-                    id="veteran"
-                    name="veteran"
-                    bind:checked={fields.veteran}
-            />
-            </div>
+            {#if vetAble}
+                <div class="inline">
+                    <label for="veteran">Veteran</label>
+                    <input
+                        type="checkbox"
+                        id="veteran"
+                        name="veteran"
+                        bind:checked={fields.veteran}
+                />
+                </div>
+            {/if}
 
             <div class="inline">
                 <label for="boosted">Combat Boost</label>
