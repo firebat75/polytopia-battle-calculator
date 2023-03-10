@@ -32,6 +32,7 @@
     }
 
     let naval = false;
+    let selectedNaval = "";
     let vetAble = true;
 
     function selection(e) {
@@ -48,8 +49,10 @@
         }
         if (ships.includes(fields.unit)) {
             naval = true;
+            selectedNaval = fields.unit;
         } else {
             naval = false;
+            selectedNaval = "";
         }
         if (nonVet.includes(fields.unit)) {
             vetAble = false;
@@ -59,9 +62,32 @@
     }
 
     function selectionNaval(e) {
-        console.log("CARRYING " + e.detail.text);
-        stats.maxHealth = data[e.detail.text].health
-        stats.health = data[e.detail.text].health
+        if (e.detail.text == "cloak") {
+            fields.unit = "dinghy";
+            stats = {
+            maxHealth: data[fields.unit].health,
+            health: data[fields.unit].health,
+            attack: data[fields.unit].attack,
+            defence: data[fields.unit].defence,
+            movement: data[fields.unit].movement,
+            range: data[fields.unit].range
+            }
+        } else if (e.detail.text == "dagger") {
+            fields.unit = "pirate";
+            stats = {
+            maxHealth: data[fields.unit].health,
+            health: data[fields.unit].health,
+            attack: data[fields.unit].attack,
+            defence: data[fields.unit].defence,
+            movement: data[fields.unit].movement,
+            range: data[fields.unit].range
+            }
+        } else {
+            console.log("CARRYING " + e.detail.text);
+            fields.unit = selectedNaval;
+            stats.maxHealth = data[e.detail.text].health
+            stats.health = data[e.detail.text].health
+        }
     }
 
 </script>
@@ -129,7 +155,7 @@
         </div>
         <div>
             <img
-                src="https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
+                src={data[fields.unit].img}
                 alt="unit placeholder"
             />
         </div>
