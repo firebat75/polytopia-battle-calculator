@@ -7,7 +7,7 @@
         health: 10,
     };
 
-    const nonVet = ['dagger','polytaur','navalon','bunny','bunta','boat','ship','battleship','dingy','pirate'];
+    const nonVet = ['cloak', 'dagger','polytaur','navalon','bunny','bunta','dinghy','pirate'];
     const ships = ['boat','ship','battleship'];
 
     let unit = fields.unit;
