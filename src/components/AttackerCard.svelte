@@ -7,8 +7,17 @@
         health: 10,
     };
 
-    const nonVet = ['cloak', 'dagger','polytaur','navalon','bunny','bunta','dinghy','pirate'];
-    const ships = ['boat','ship','battleship'];
+    const nonVet = [
+        "cloak",
+        "dagger",
+        "polytaur",
+        "navalon",
+        "bunny",
+        "bunta",
+        "dinghy",
+        "pirate",
+    ];
+    const ships = ["boat", "ship", "battleship"];
 
     let unit = fields.unit;
     $: unit = fields.unit;
@@ -19,7 +28,7 @@
     for (const unit in data) {
         units.push(unit);
     }
-    console.log(units)
+    console.log(units);
 
     export let stats = {};
     stats = {
@@ -28,28 +37,32 @@
         attack: 2,
         defence: 2,
         movement: 1,
-        range: 1
-    }
+        range: 1,
+    };
 
     let naval = false;
     let selectedNaval = "";
     let vetAble = true;
+    let carrying = "";
 
     function selection(e) {
         console.log(e.detail.text);
         fields.unit = e.detail.text;
-        console.log(data[fields.unit].health)
+        console.log(data[fields.unit].health);
         stats = {
             maxHealth: data[fields.unit].health,
             health: data[fields.unit].health,
             attack: data[fields.unit].attack,
             defence: data[fields.unit].defence,
             movement: data[fields.unit].movement,
-            range: data[fields.unit].range
-        }
+            range: data[fields.unit].range,
+        };
         if (ships.includes(fields.unit)) {
             naval = true;
             selectedNaval = fields.unit;
+            carrying = "warrior";
+            stats.maxHealth = data["warrior"].health;
+            stats.health = data["warrior"].health;
         } else {
             naval = false;
             selectedNaval = "";
@@ -65,31 +78,33 @@
         if (e.detail.text == "cloak") {
             fields.unit = "dinghy";
             stats = {
-            maxHealth: data[fields.unit].health,
-            health: data[fields.unit].health,
-            attack: data[fields.unit].attack,
-            defence: data[fields.unit].defence,
-            movement: data[fields.unit].movement,
-            range: data[fields.unit].range
-            }
+                maxHealth: data[fields.unit].health,
+                health: data[fields.unit].health,
+                attack: data[fields.unit].attack,
+                defence: data[fields.unit].defence,
+                movement: data[fields.unit].movement,
+                range: data[fields.unit].range,
+            };
+            carrying = "cloak";
         } else if (e.detail.text == "dagger") {
             fields.unit = "pirate";
             stats = {
-            maxHealth: data[fields.unit].health,
-            health: data[fields.unit].health,
-            attack: data[fields.unit].attack,
-            defence: data[fields.unit].defence,
-            movement: data[fields.unit].movement,
-            range: data[fields.unit].range
-            }
+                maxHealth: data[fields.unit].health,
+                health: data[fields.unit].health,
+                attack: data[fields.unit].attack,
+                defence: data[fields.unit].defence,
+                movement: data[fields.unit].movement,
+                range: data[fields.unit].range,
+            };
+            carrying = "dagger";
         } else {
             console.log("CARRYING " + e.detail.text);
             fields.unit = selectedNaval;
-            stats.maxHealth = data[e.detail.text].health
-            stats.health = data[e.detail.text].health
+            stats.maxHealth = data[e.detail.text].health;
+            stats.health = data[e.detail.text].health;
+            carrying = e.detail.text;
         }
     }
-
 </script>
 
 <div class="unit-card">
@@ -98,14 +113,14 @@
             <h2>attacker</h2>
 
             <div class="inline">
-            <label for="attacker-unit-choice">Unit</label>
-            <UnitSelectDropdown on:selection={selection}/>
+                <label for="attacker-unit-choice">Unit</label>
+                <UnitSelectDropdown on:selection={selection} />
             </div>
 
             {#if naval}
                 <div class="inline">
                     <label for="attacker-naval-carry">Carrying</label>
-                    <UnitSelectDropdown on:selection={selectionNaval}/>
+                    <UnitSelectDropdown on:selection={selectionNaval} />
                 </div>
             {/if}
 
@@ -117,7 +132,7 @@
                         id="veteran"
                         name="veteran"
                         bind:checked={fields.veteran}
-                />
+                    />
                 </div>
             {/if}
 
@@ -146,6 +161,9 @@
     <div class="unit-stats">
         <div class="stat-text">
             <h3>Unit: {fields.unit}</h3>
+            {#if naval}
+                <h5>Carrying: {carrying}</h5>
+            {/if}
             <h3>Max Health: {stats.maxHealth}</h3>
             <h3>Health: {stats.health}</h3>
             <h3>Attack: {stats.attack}</h3>
@@ -154,10 +172,7 @@
             <h3>Range: {stats.range}</h3>
         </div>
         <div>
-            <img
-                src={data[fields.unit].img}
-                alt="unit placeholder"
-            />
+            <img src={data[fields.unit].img} alt="unit placeholder" />
         </div>
         <div>
             <p>jfekje</p>
@@ -165,12 +180,9 @@
     </div>
 </div>
 
-
-
-
 <style>
     .stat-text {
-        display:block !important; 
+        display: block !important;
     }
     label {
         padding: 5px;
