@@ -45,7 +45,21 @@
     let vetAble = true;
     let carrying = "";
 
+    function vetted() {
+        fields.veteran = !fields.veteran;
+        if (fields.veteran == true) {
+            stats.maxHealth += 5;
+            stats.health += 5;
+        } else {
+            stats.maxHealth -= 5;
+            stats.health -= 5;
+        }
+        console.log(fields);
+    }
+
     function selection(e) {
+        fields.veteran = false;
+        fields.boosted = false;
         console.log(e.detail.text);
         fields.unit = e.detail.text;
         console.log(data[fields.unit].health);
@@ -72,6 +86,7 @@
         } else {
             vetAble = true;
         }
+        console.log(stats);
     }
 
     function selectionNaval(e) {
@@ -104,6 +119,7 @@
             stats.health = data[e.detail.text].health;
             carrying = e.detail.text;
         }
+        console.log(stats);
     }
 </script>
 
@@ -132,6 +148,7 @@
                         id="veteran"
                         name="veteran"
                         bind:checked={fields.veteran}
+                        on:click={vetted}
                     />
                 </div>
             {/if}
@@ -152,7 +169,7 @@
                     type="text"
                     class="health"
                     name="attacker-health"
-                    bind:value={fields.health}
+                    bind:value={stats.health}
                 />
             </div>
         </form>
