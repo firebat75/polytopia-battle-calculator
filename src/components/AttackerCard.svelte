@@ -7,6 +7,21 @@
         health: 10,
     };
 
+    function checkHealth() {
+        if (stats.health == "") {
+            stats.health = 0;
+        } else if (!isNaN(stats.health)) {
+            stats.health = parseInt(stats.health);
+        } else {
+            stats.health = stats.maxHealth;
+        }
+    }
+
+    $: {
+        stats.health;
+        checkHealth();
+    }
+
     const nonVet = [
         "cloak",
         "dagger",
@@ -183,6 +198,7 @@
                     class="health"
                     name="attacker-health"
                     bind:value={stats.health}
+                    on:change={checkHealth}
                 />
             </div>
         </form>
