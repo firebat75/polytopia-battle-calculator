@@ -57,6 +57,18 @@
         console.log(fields);
     }
 
+    function boosted() {
+        fields.boosted = !fields.boosted;
+        if (fields.boosted == true) {
+            stats.attack += 0.5;
+            stats.range += 1;
+        } else {
+            stats.attack -= 0.5;
+            stats.range -= 1;
+        }
+        console.log(fields);
+    }
+
     function selection(e) {
         fields.veteran = false;
         fields.boosted = false;
@@ -160,6 +172,7 @@
                     id="boosted"
                     name="boosted"
                     bind:checked={fields.boosted}
+                    on:click={boosted}
                 />
             </div>
 
