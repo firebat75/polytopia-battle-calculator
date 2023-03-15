@@ -1,5 +1,6 @@
 <script>
     import AttackerCard from "../components/AttackerCard.svelte";
+    import DefenderCard from "../components/DefenderCard.svelte";
 
     import { aStats } from "../lib/stores";
 
@@ -12,12 +13,6 @@
     <title>Battle Calculator</title>
 </svelte:head>
 
-<h3>Welcome to SvelteKit</h3>
-<p>
-    Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-</p>
-frwefesfsdfsfsdfesfsdfsdfdsfsdfwefwgwesfgsdfds
-
 <div id="calculator">
     <div class="units">
         <div class="unit-card">
@@ -25,7 +20,7 @@ frwefesfsdfsfsdfesfsdfsdfdsfsdfwefwgwesfgsdfds
         </div>
 
         <div class="unit-card">
-            <AttackerCard />
+            <DefenderCard />
         </div>
     </div>
     <button on:click={printStats}>calculate</button>

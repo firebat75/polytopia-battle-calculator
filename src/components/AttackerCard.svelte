@@ -7,6 +7,7 @@
         health: 10,
     };
 
+    // checks and ensures health field is a valid integer
     function checkHealth() {
         if (stats.health == "") {
             stats.health = 0;
@@ -16,12 +17,12 @@
             stats.health = stats.maxHealth;
         }
     }
-
     $: {
         stats.health;
         checkHealth();
     }
 
+    // units that can't have veteran toggled on
     const nonVet = [
         "cloak",
         "dagger",
