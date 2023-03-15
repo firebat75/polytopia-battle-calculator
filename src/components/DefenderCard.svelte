@@ -153,7 +153,7 @@
 <div class="unit-card">
     <div id="attacker-input-div">
         <form id="attacker-input-form">
-            <h2>attacker</h2>
+            <h2>defender</h2>
 
             <div class="inline">
                 <label for="attacker-unit-choice">Unit</label>
@@ -220,6 +220,7 @@
         <div>
             <img src={data[fields.unit].img} alt="unit placeholder" />
         </div>
+        <div />
     </div>
 </div>
 
