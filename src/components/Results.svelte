@@ -17,20 +17,21 @@
         return calcAttackForce() + calcDefenceForce();
     }
 
-    let td = [0, 0];
-
+    // calculates how much health the defender will take
     function calcAttackResult() {
         return Math.round(
             (calcAttackForce() / calcTotalDamage()) * $aStats.attack * 4.5
         );
     }
 
+    // calculates how much health the attacker will take from defender retaliation
     function calcDefenceResult() {
         return Math.round(
             (calcDefenceForce() / calcTotalDamage()) * $dStats.defence * 4.5
         );
     }
 
+    let td = [0, 0];
     function test() {
         td[0] = calcAttackResult();
         td[1] = calcDefenceResult();
