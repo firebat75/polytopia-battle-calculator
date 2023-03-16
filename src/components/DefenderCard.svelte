@@ -5,7 +5,7 @@
         unit: "warrior",
         veteran: false,
         boosted: false,
-        dBonus: 0,
+        dBonus: 1,
         health: 10,
     };
 

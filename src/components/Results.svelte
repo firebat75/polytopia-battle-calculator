@@ -1,8 +1,6 @@
 <script>
     import { aStats, dStats, dFields, aFields } from "../lib/stores";
 
-    let td = 0;
-
     function calcAttackForce() {
         return $aStats.attack * ($aStats.health / $aStats.maxHealth);
     }
@@ -19,8 +17,23 @@
         return calcAttackForce() + calcDefenceForce();
     }
 
+    let td = [0, 0];
+
+    function calcAttackResult() {
+        return Math.round(
+            (calcAttackForce() / calcTotalDamage()) * $aStats.attack * 4.5
+        );
+    }
+
+    function calcDefenceResult() {
+        return Math.round(
+            (calcDefenceForce() / calcTotalDamage()) * $dStats.defence * 4.5
+        );
+    }
+
     function test() {
-        td = calcTotalDamage();
+        td[0] = calcAttackResult();
+        td[1] = calcDefenceResult();
     }
 </script>
 
