@@ -3,13 +3,20 @@
 
     let td = 0;
 
-    function calcTotalDamage() {
+    function calcAttackForce() {
+        return $aStats.attack * ($aStats.health / $aStats.maxHealth);
+    }
+
+    function calcDefenceForce() {
         return (
-            $aStats.attack * ($aStats.health / $aStats.maxHealth) +
             $dStats.defence *
-                ($dStats.health / $dStats.maxHealth) *
-                $dFields.dBonus
+            ($dStats.health / $dStats.maxHealth) *
+            $dFields.dBonus
         );
+    }
+
+    function calcTotalDamage() {
+        return calcAttackForce() + calcDefenceForce();
     }
 
     function test() {
