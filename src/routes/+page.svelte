@@ -1,12 +1,6 @@
 <script>
     import AttackerCard from "../components/AttackerCard.svelte";
     import DefenderCard from "../components/DefenderCard.svelte";
-
-    import { aStats, dStats } from "../lib/stores";
-
-    function printStats() {
-        console.log($aStats);
-    }
 </script>
 
 <svelte:head>
@@ -23,12 +17,7 @@
             <DefenderCard />
         </div>
     </div>
-    <button on:click={printStats}>calculate</button>
-</div>
-
-<div>
-    <p>{JSON.stringify($aStats)}</p>
-    <p>{JSON.stringify($dStats)}</p>
+    <button>calculate</button>
 </div>
 
 <style>
