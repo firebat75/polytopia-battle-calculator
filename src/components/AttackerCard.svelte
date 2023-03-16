@@ -1,5 +1,6 @@
 <script>
     import UnitSelectDropdown from "../components/UnitSelectDropdown.svelte";
+    import { aStats } from "../lib/stores";
     let fields = {
         unit: "warrior",
         veteran: false,
@@ -55,6 +56,12 @@
         movement: 1,
         range: 1,
     };
+
+    $: {
+        stats;
+        aStats.update((n) => stats);
+        console.log("ATTACKER STATS HAVE BEEN UPDATED");
+    }
 
     let naval = false;
     let selectedNaval = "";
