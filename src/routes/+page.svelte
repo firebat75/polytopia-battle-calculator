@@ -1,6 +1,7 @@
 <script>
     import AttackerCard from "../components/AttackerCard.svelte";
     import DefenderCard from "../components/DefenderCard.svelte";
+    import Results from "../components/Results.svelte";
 </script>
 
 <svelte:head>
@@ -17,7 +18,7 @@
             <DefenderCard />
         </div>
     </div>
-    <button>calculate</button>
+    <Results />
 </div>
 
 <style>
