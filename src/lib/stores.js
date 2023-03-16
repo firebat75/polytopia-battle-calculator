@@ -11,6 +11,13 @@ export const aStats = writable({
     range: 1
 })
 
+export const aFields = writable({
+    unit: "warrior",
+    veteran: false,
+    boosted: false,
+    health: 10,
+});
+
 export const dStats = writable({
     maxHealth: 10,
     health: 10,
@@ -19,3 +26,10 @@ export const dStats = writable({
     movement: 1,
     range: 1
 })
+
+export const dFields = writable({
+    unit: "warrior",
+    veteran: false,
+    boosted: false,
+    health: 10,
+});

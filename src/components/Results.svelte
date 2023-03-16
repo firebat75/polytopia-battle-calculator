@@ -1,10 +1,12 @@
 <script>
-    import { aStats, dStats } from "../lib/stores";
+    import { aStats, dStats, dFields, aFields } from "../lib/stores";
 </script>
 
 <div class="main">
     <p>{JSON.stringify($aStats)}</p>
+    <p>{JSON.stringify($aFields)}</p>
     <p>{JSON.stringify($dStats)}</p>
+    <p>{JSON.stringify($dFields)}</p>
     <button>calculate</button>
 </div>
 

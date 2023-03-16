@@ -1,12 +1,18 @@
 <script>
     import UnitSelectDropdown from "../components/UnitSelectDropdown.svelte";
-    import { dStats } from "../lib/stores";
+    import { dStats, dFields } from "../lib/stores";
     let fields = {
         unit: "warrior",
         veteran: false,
         boosted: false,
         health: 10,
     };
+
+    $: {
+        fields;
+        dFields.update((n) => fields);
+        console.log("DEFENDER FIELDS HAVE BEEN UPDATED");
+    }
 
     function checkHealth() {
         if (stats.health == "") {
