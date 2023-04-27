@@ -5,6 +5,7 @@
         unit: "warrior",
         veteran: false,
         boosted: false,
+        poisoned: false,
         dBonus: 1,
         health: 10,
     };
@@ -291,6 +292,5 @@
     .unit-image-container {
         height: 200px;
         width: 200px;
-        justify-content: center;
     }
 </style>
