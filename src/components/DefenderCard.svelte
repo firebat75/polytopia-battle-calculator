@@ -167,20 +167,20 @@
         <form id="attacker-input-form">
             <h2>defender</h2>
 
-            <div class="inline">
+            <div class="field-div">
                 <label for="attacker-unit-choice">Unit</label>
                 <UnitSelectDropdown on:selection={selection} />
             </div>
 
             {#if naval}
-                <div class="inline">
+                <div class="field-div">
                     <label for="attacker-naval-carry">Carrying</label>
                     <UnitSelectDropdown on:selection={selectionNaval} />
                 </div>
             {/if}
 
             {#if vetAble}
-                <div class="inline">
+                <div class="field-div">
                     <label for="veteran">Veteran</label>
                     <input
                         type="checkbox"
@@ -192,7 +192,7 @@
                 </div>
             {/if}
 
-            <div class="inline">
+            <div class="field-div">
                 <label for="poisoned">Poisoned</label>
                 <input
                     type="checkbox"
@@ -203,7 +203,7 @@
                 />
             </div>
 
-            <div class="inline">
+            <div class="field-div">
                 <label for="attacker-health">Health</label>
                 <input
                     type="text"
@@ -212,6 +212,32 @@
                     bind:value={stats.health}
                     on:change={checkHealth}
                 />
+            </div>
+            <p style="margin-bottom: 0px;">Defence Bonus</p>
+            <div class="field-div">
+                <input
+                    type="radio"
+                    name="option"
+                    value="option1"
+                    id="option1"
+                />
+                <label for="option1">Option 1</label><br />
+
+                <input
+                    type="radio"
+                    name="option"
+                    value="option2"
+                    id="option2"
+                />
+                <label for="option2">Option 2</label><br />
+
+                <input
+                    type="radio"
+                    name="option"
+                    value="option3"
+                    id="option3"
+                />
+                <label for="option3">Option 3</label><br />
             </div>
         </form>
     </div>
@@ -254,6 +280,10 @@
 
     .unit-card div {
         display: inline-flex;
+    }
+
+    .field-div {
+        outline: 1px solid black;
     }
 
     #attacker-input-form {
