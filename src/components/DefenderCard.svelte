@@ -101,6 +101,18 @@
         console.log(fields);
     }
 
+    function dBonus0() {
+        fields.dBonus = 0;
+    }
+
+    function dBonus1() {
+        fields.dBonus = 1.5;
+    }
+
+    function dBonus2() {
+        fields.dBonus = 3;
+    }
+
     function selection(e) {
         fields.veteran = false;
         fields.poisoned = false;
@@ -227,24 +239,27 @@
                         name="option"
                         value="option1"
                         id="option1"
+                        on:click={dBonus0}
                     />
-                    <label for="option1">Option 1</label><br />
+                    <label for="option1">None</label><br />
 
                     <input
                         type="radio"
                         name="option"
                         value="option2"
                         id="option2"
+                        on:click={dBonus1}
                     />
-                    <label for="option2">Option 2</label><br />
+                    <label for="option2">x1.5</label><br />
 
                     <input
                         type="radio"
                         name="option"
                         value="option3"
                         id="option3"
+                        on:click={dBonus2}
                     />
-                    <label for="option3">Option 3</label><br />
+                    <label for="option3">x4</label><br />
                 </div>
             </div>
         </form>
