@@ -30,7 +30,6 @@ export const dStats = writable({
 export const dFields = writable({
     unit: "warrior",
     veteran: false,
-    boosted: false,
     poisoned: false,
     dBonus: 1,
     health: 10,

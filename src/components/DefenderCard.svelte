@@ -4,7 +4,6 @@
     let fields = {
         unit: "warrior",
         veteran: false,
-        boosted: false,
         poisoned: false,
         dBonus: 1,
         health: 10,
@@ -87,21 +86,19 @@
         console.log(fields);
     }
 
-    function boosted() {
-        fields.boosted = !fields.boosted;
-        if (fields.boosted == true) {
-            stats.attack += 0.5;
-            stats.range += 1;
+    function poisoned() {
+        fields.poisoned = !fields.poisoned;
+        if (fields.poisoned == true) {
+            stats.defence = stats.defence * 0.8;
         } else {
-            stats.attack -= 0.5;
-            stats.range -= 1;
+            stats.defence = stats.defence / 0.8;
         }
         console.log(fields);
     }
 
     function selection(e) {
         fields.veteran = false;
-        fields.boosted = false;
+        fields.poisoned = false;
         console.log(e.detail.text);
         fields.unit = e.detail.text;
         console.log(data[fields.unit].health);
@@ -196,13 +193,13 @@
             {/if}
 
             <div class="inline">
-                <label for="boosted">Combat Boost</label>
+                <label for="poisoned">Poisoned</label>
                 <input
                     type="checkbox"
-                    id="boosted"
-                    name="boosted"
-                    bind:checked={fields.boosted}
-                    on:click={boosted}
+                    id="poisoned"
+                    name="poisoned"
+                    bind:checked={fields.poisoned}
+                    on:click={poisoned}
                 />
             </div>
 
