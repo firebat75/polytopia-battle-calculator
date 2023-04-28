@@ -9,12 +9,14 @@
         health: 10,
     };
 
+    // updates stores field variables every time they are updated
     $: {
         fields;
         dFields.update((n) => fields);
         console.log("DEFENDER FIELDS HAVE BEEN UPDATED");
     }
 
+    // keeps health input a valid integer
     function checkHealth() {
         if (stats.health == "") {
             stats.health = 0;
@@ -63,6 +65,7 @@
         range: 1,
     };
 
+    // updates stores stats variables every time they are updated
     $: {
         stats;
         dStats.update((n) => stats);
@@ -74,6 +77,7 @@
     let vetAble = true;
     let carrying = "";
 
+    // changes max health according to fields.veteran
     function vetted() {
         fields.veteran = !fields.veteran;
         if (fields.veteran == true) {
@@ -86,6 +90,7 @@
         console.log(fields);
     }
 
+    // changes stats.defence according to fields.poison
     function poisoned() {
         fields.poisoned = !fields.poisoned;
         if (fields.poisoned == true) {
@@ -213,31 +218,34 @@
                     on:change={checkHealth}
                 />
             </div>
-            <p style="margin-bottom: 0px;">Defence Bonus</p>
+
             <div class="field-div">
-                <input
-                    type="radio"
-                    name="option"
-                    value="option1"
-                    id="option1"
-                />
-                <label for="option1">Option 1</label><br />
+                <p>Defence Bonus</p>
+                <div class="dbonus-radio">
+                    <input
+                        type="radio"
+                        name="option"
+                        value="option1"
+                        id="option1"
+                    />
+                    <label for="option1">Option 1</label><br />
 
-                <input
-                    type="radio"
-                    name="option"
-                    value="option2"
-                    id="option2"
-                />
-                <label for="option2">Option 2</label><br />
+                    <input
+                        type="radio"
+                        name="option"
+                        value="option2"
+                        id="option2"
+                    />
+                    <label for="option2">Option 2</label><br />
 
-                <input
-                    type="radio"
-                    name="option"
-                    value="option3"
-                    id="option3"
-                />
-                <label for="option3">Option 3</label><br />
+                    <input
+                        type="radio"
+                        name="option"
+                        value="option3"
+                        id="option3"
+                    />
+                    <label for="option3">Option 3</label><br />
+                </div>
             </div>
         </form>
     </div>
@@ -284,6 +292,11 @@
 
     .field-div {
         outline: 1px solid black;
+        display: inline-flex;
+    }
+
+    .dbonus-radio {
+        display: block !important;
     }
 
     #attacker-input-form {
