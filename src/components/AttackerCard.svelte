@@ -47,11 +47,9 @@
 
     import data from "../lib/units.json";
     let units = [];
-    console.log(data);
     for (const unit in data) {
         units.push(unit);
     }
-    console.log(units);
 
     export let stats = {};
     stats = {

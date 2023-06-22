@@ -49,11 +49,9 @@
 
     import data from "../lib/units.json";
     let units = [];
-    console.log(data);
     for (const unit in data) {
         units.push(unit);
     }
-    console.log(units);
 
     export let stats = {};
     stats = {
@@ -102,7 +100,7 @@
     }
 
     function dBonus0() {
-        fields.dBonus = 0;
+        fields.dBonus = 1;
     }
 
     function dBonus1() {
@@ -240,6 +238,7 @@
                         value="option1"
                         id="option1"
                         on:click={dBonus0}
+                        checked
                     />
                     <label for="option1">None</label><br />
 
