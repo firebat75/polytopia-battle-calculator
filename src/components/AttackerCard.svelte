@@ -265,11 +265,11 @@
         outline: solid blue 1px;
     }
 
-    .unit-stats {
+    /* .unit-stats {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
+    } */
 
     .health {
         width: 20px;
