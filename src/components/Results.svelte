@@ -32,7 +32,7 @@
     }
 
     let td = [0, 0];
-    function test() {
+    function calculate() {
         td[0] = calcAttackResult();
         td[1] = calcDefenceResult();
     }
@@ -44,7 +44,7 @@
     <p>{JSON.stringify($dStats)}</p>
     <p>{JSON.stringify($dFields)}</p>
     <h1>{td}</h1>
-    <button on:click={test}>calculate</button>
+    <button on:click={calculate}>calculate</button>
 </div>
 
 <style>

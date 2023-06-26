@@ -47,11 +47,9 @@
 
     import data from "../lib/units.json";
     let units = [];
-    console.log(data);
     for (const unit in data) {
         units.push(unit);
     }
-    console.log(units);
 
     export let stats = {};
     stats = {
@@ -231,8 +229,12 @@
             <h3>Movement: {stats.movement}</h3>
             <h3>Range: {stats.range}</h3>
         </div>
-        <div>
-            <img src={data[fields.unit].img} alt="unit placeholder" />
+        <div class="unit-image-container">
+            <img
+                class="unit-image"
+                src={data[fields.unit].img}
+                alt="unit placeholder"
+            />
         </div>
     </div>
 </div>
@@ -275,5 +277,16 @@
 
     .unit-choice {
         width: 68px;
+    }
+
+    .unit-image {
+        max-width: 200px;
+        max-height: 200px;
+        margin: auto;
+    }
+
+    .unit-image-container {
+        height: 200px;
+        width: 200px;
     }
 </style>

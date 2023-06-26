@@ -5,10 +5,12 @@
         unit: "warrior",
         veteran: false,
         poisoned: false,
+        poisoned: false,
         dBonus: 1,
         health: 10,
     };
 
+    // updates stores field variables every time they are updated
     // updates stores field variables every time they are updated
     $: {
         fields;
@@ -16,6 +18,7 @@
         console.log("DEFENDER FIELDS HAVE BEEN UPDATED");
     }
 
+    // keeps health input a valid integer
     // keeps health input a valid integer
     function checkHealth() {
         if (stats.health == "") {
@@ -49,11 +52,9 @@
 
     import data from "../lib/units.json";
     let units = [];
-    console.log(data);
     for (const unit in data) {
         units.push(unit);
     }
-    console.log(units);
 
     export let stats = {};
     stats = {
@@ -66,6 +67,7 @@
     };
 
     // updates stores stats variables every time they are updated
+    // updates stores stats variables every time they are updated
     $: {
         stats;
         dStats.update((n) => stats);
@@ -77,6 +79,7 @@
     let vetAble = true;
     let carrying = "";
 
+    // changes max health according to fields.veteran
     // changes max health according to fields.veteran
     function vetted() {
         fields.veteran = !fields.veteran;
@@ -95,10 +98,28 @@
         fields.poisoned = !fields.poisoned;
         if (fields.poisoned == true) {
             stats.defence = stats.defence * 0.8;
+    // changes stats.defence according to fields.poison
+    function poisoned() {
+        fields.poisoned = !fields.poisoned;
+        if (fields.poisoned == true) {
+            stats.defence = stats.defence * 0.8;
         } else {
+            stats.defence = stats.defence / 0.8;
             stats.defence = stats.defence / 0.8;
         }
         console.log(fields);
+    }
+
+    function dBonus0() {
+        fields.dBonus = 1;
+    }
+
+    function dBonus1() {
+        fields.dBonus = 1.5;
+    }
+
+    function dBonus2() {
+        fields.dBonus = 3;
     }
 
     function dBonus0() {
@@ -115,6 +136,7 @@
 
     function selection(e) {
         fields.veteran = false;
+        fields.poisoned = false;
         fields.poisoned = false;
         console.log(e.detail.text);
         fields.unit = e.detail.text;
@@ -185,11 +207,13 @@
             <h2>defender</h2>
 
             <div class="field-div">
+            <div class="field-div">
                 <label for="attacker-unit-choice">Unit</label>
                 <UnitSelectDropdown on:selection={selection} />
             </div>
 
             {#if naval}
+                <div class="field-div">
                 <div class="field-div">
                     <label for="attacker-naval-carry">Carrying</label>
                     <UnitSelectDropdown on:selection={selectionNaval} />
@@ -197,6 +221,7 @@
             {/if}
 
             {#if vetAble}
+                <div class="field-div">
                 <div class="field-div">
                     <label for="veteran">Veteran</label>
                     <input
@@ -211,8 +236,14 @@
 
             <div class="field-div">
                 <label for="poisoned">Poisoned</label>
+            <div class="field-div">
+                <label for="poisoned">Poisoned</label>
                 <input
                     type="checkbox"
+                    id="poisoned"
+                    name="poisoned"
+                    bind:checked={fields.poisoned}
+                    on:click={poisoned}
                     id="poisoned"
                     name="poisoned"
                     bind:checked={fields.poisoned}
@@ -220,6 +251,7 @@
                 />
             </div>
 
+            <div class="field-div">
             <div class="field-div">
                 <label for="attacker-health">Health</label>
                 <input
@@ -229,38 +261,6 @@
                     bind:value={stats.health}
                     on:change={checkHealth}
                 />
-            </div>
-
-            <div class="field-div">
-                <p>Defence Bonus</p>
-                <div class="dbonus-radio">
-                    <input
-                        type="radio"
-                        name="option"
-                        value="option1"
-                        id="option1"
-                        on:click={dBonus0}
-                    />
-                    <label for="option1">None</label><br />
-
-                    <input
-                        type="radio"
-                        name="option"
-                        value="option2"
-                        id="option2"
-                        on:click={dBonus1}
-                    />
-                    <label for="option2">x1.5</label><br />
-
-                    <input
-                        type="radio"
-                        name="option"
-                        value="option3"
-                        id="option3"
-                        on:click={dBonus2}
-                    />
-                    <label for="option3">x4</label><br />
-                </div>
             </div>
         </form>
     </div>
@@ -278,6 +278,12 @@
             <h3>Movement: {stats.movement}</h3>
             <h3>Range: {stats.range}</h3>
         </div>
+        <div class="unit-image-container">
+            <img
+                class="unit-image"
+                src={data[fields.unit].img}
+                alt="unit placeholder"
+            />
         <div class="unit-image-container">
             <img
                 class="unit-image"
@@ -314,6 +320,15 @@
         display: block !important;
     }
 
+    .field-div {
+        outline: 1px solid black;
+        display: inline-flex;
+    }
+
+    .dbonus-radio {
+        display: block !important;
+    }
+
     #attacker-input-form {
         display: flex;
         flex-direction: column;
@@ -336,6 +351,17 @@
 
     .unit-choice {
         width: 68px;
+    }
+
+    .unit-image {
+        max-width: 200px;
+        max-height: 200px;
+        margin: auto;
+    }
+
+    .unit-image-container {
+        height: 200px;
+        width: 200px;
     }
 
     .unit-image {
