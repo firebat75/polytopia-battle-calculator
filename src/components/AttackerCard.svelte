@@ -1,6 +1,7 @@
 <script>
     import UnitSelectDropdown from "../components/UnitSelectDropdown.svelte";
     import { aStats, aFields } from "../lib/stores";
+    import Healthbar from "./Healthbar.svelte";
     let fields = {
         unit: "warrior",
         veteran: false,
@@ -235,6 +236,7 @@
                 src={data[fields.unit].img}
                 alt="unit placeholder"
             />
+            <Healthbar maxHealth={stats.maxHealth} health={stats.health} />
         </div>
     </div>
 </div>
@@ -265,12 +267,6 @@
         outline: solid blue 1px;
     }
 
-    /* .unit-stats {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    } */
-
     .health {
         width: 20px;
     }
@@ -288,5 +284,6 @@
     .unit-image-container {
         height: 200px;
         width: 200px;
+        display: block !important;
     }
 </style>

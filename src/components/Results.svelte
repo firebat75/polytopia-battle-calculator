@@ -55,8 +55,13 @@
     <h2 slot="header">Combat Results</h2>
 
     <ul>
-        <li>defender takes {td[1]} of damage</li>
-        <li>attacker takes {td[0]} of health retaliation</li>
+        <li>defender takes {td[0]} of damage</li>
+        <li>attacker takes {td[1]} of health retaliation</li>
+    </ul>
+
+    <ul>
+        <li>defender has {$dStats.health - td[0]} remaining health</li>
+        <li>attacker has {$aStats.health - td[1]} remaining health</li>
     </ul>
 </Modal>
 
