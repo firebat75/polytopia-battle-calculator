@@ -3,25 +3,26 @@
     export let health;
 </script>
 
-<body>
+<div class="hbody">
     <div class="bar">
         <div
             class="health"
             style="width: {Math.floor((100 / maxHealth) * health)}%"
         >
-            <p>{health}/{maxHealth}</p>
+            <p class="health-fraction">{health}/{maxHealth}</p>
         </div>
     </div>
-</body>
+</div>
 
 <style>
-    body {
+    .hbody {
         margin: 1em;
+        text-align: center;
     }
 
     .bar {
         width: 100%;
-        background-color: rgba(255, 0, 0, 0.303);
+        background-color: rgba(255, 0, 0, 0.404);
         outline: 3px solid black;
     }
 
@@ -29,8 +30,7 @@
         background-color: rgb(0, 255, 0);
     }
 
-    p {
-        text-align: center;
+    .health-fraction {
         margin: 0;
     }
 </style>
