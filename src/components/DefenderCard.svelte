@@ -219,17 +219,6 @@
             </div>
 
             <div class="field-div">
-                <label for="attacker-health">Health</label>
-                <input
-                    type="text"
-                    class="health"
-                    name="attacker-health"
-                    bind:value={stats.health}
-                    on:change={checkHealth}
-                />
-            </div>
-
-            <div class="field-div">
                 <p>Defence Bonus</p>
                 <div class="dbonus-radio">
                     <input
@@ -260,6 +249,17 @@
                     />
                     <label for="option3">x4</label><br />
                 </div>
+            </div>
+
+            <div class="field-div">
+                <label for="attacker-health">Health</label>
+                <input
+                    type="text"
+                    class="health"
+                    name="attacker-health"
+                    bind:value={stats.health}
+                    on:change={checkHealth}
+                />
             </div>
         </form>
     </div>
