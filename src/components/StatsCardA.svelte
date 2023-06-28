@@ -21,4 +21,8 @@
         text-align: center;
         margin: 0;
     }
+
+    .unit-img {
+        outline: 4px dotted black;
+    }
 </style>
