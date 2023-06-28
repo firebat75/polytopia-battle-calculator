@@ -1,20 +1,20 @@
 <script>
-    import { aStats, aFields, aImg } from "../lib/stores";
+    import { dStats, dFields, dImg } from "../lib/stores";
     import Healthbar from "./Healthbar.svelte";
 </script>
 
 <div class="card">
     <h3>
-        {$aFields.unit}
-        {#if $aFields.naval}({$aFields.carrying}){/if}
+        {$dFields.unit}
+        {#if $dFields.naval}({$dFields.carrying}){/if}
     </h3>
-    <Healthbar maxHealth={$aStats.maxHealth} health={$aStats.health} />
-    <img class="unit-img" src={$aImg.icon} alt="attacker-img" />
+    <Healthbar maxHealth={$dStats.maxHealth} health={$dStats.health} />
+    <img class="unit-img" src={$dImg.icon} alt="attacker-img" />
     <div class="display-stats">
-        <p>⚔️ {$aStats.attack}</p>
-        <p>🛡️ {$aStats.defence}</p>
-        <p>🐎 {$aStats.movement}</p>
-        <p>🏹 {$aStats.range}</p>
+        <p>⚔️ {$dStats.attack}</p>
+        <p>🛡️ {$dStats.defence}</p>
+        <p>🐎 {$dStats.movement}</p>
+        <p>🏹 {$dStats.range}</p>
     </div>
 </div>
 
