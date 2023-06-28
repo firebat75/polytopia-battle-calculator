@@ -2,6 +2,8 @@
     import UnitSelectDropdown from "../components/UnitSelectDropdown.svelte";
     import { aStats, aFields, aImg } from "../lib/stores";
     import StatsCardA from "./StatsCardA.svelte";
+
+    // set fields to default (warrior) on load
     $aFields = {
         unit: "warrior",
         veteran: false,
@@ -11,7 +13,18 @@
         carrying: "warrior",
     };
 
+    // set stats to default (warrior) on load
+    $aStats = {
+        maxHealth: 10,
+        health: 10,
+        attack: 2,
+        defence: 2,
+        movement: 1,
+        range: 1,
+    };
+
     // checks and ensures health field is a valid integer
+    // replaces invalid inputs with a valid one
     function checkHealth() {
         if ($aStats.health == "") {
             $aStats.health = 0;
@@ -21,12 +34,25 @@
             $aStats.health = $aStats.maxHealth;
         }
     }
+    // runs checkHealth() whenever health input field is updated
     $: {
         $aStats.health;
         checkHealth();
     }
 
+    // units that can carry other units (ships)
+    const ships = ["boat", "ship", "battleship"];
+    let selectedNaval = "";
+
+    // create array of each unit stats to pull from
+    import data from "../lib/units.json";
+    let units = [];
+    for (const unit in data) {
+        units.push(unit);
+    }
+
     // units that can't have veteran toggled on
+    let vetAble = true;
     const nonVet = [
         "cloak",
         "dagger",
@@ -37,29 +63,7 @@
         "dinghy",
         "pirate",
     ];
-    const ships = ["boat", "ship", "battleship"];
-
-    let unit = $aFields.unit;
-    $: unit = $aFields.unit;
-
-    import data from "../lib/units.json";
-    let units = [];
-    for (const unit in data) {
-        units.push(unit);
-    }
-
-    $aStats = {
-        maxHealth: 10,
-        health: 10,
-        attack: 2,
-        defence: 2,
-        movement: 1,
-        range: 1,
-    };
-
-    let selectedNaval = "";
-    let vetAble = true;
-
+    // changes health based on veteran attribute, inverses veteran attribute
     function vetted() {
         $aFields.veteran = !$aFields.veteran;
         if ($aFields.veteran == true) {
@@ -71,6 +75,7 @@
         }
     }
 
+    // changes attack and range based on combat boost attribute, inverses combat boost attribute
     function boosted() {
         $aFields.boosted = !$aFields.boosted;
         if ($aFields.boosted == true) {
@@ -82,6 +87,8 @@
         }
     }
 
+    // changes fields and stats in stores based on form input
+    // if naval is selected, default to carrying warrior
     function selection(e) {
         $aFields.veteran = false;
         $aFields.boosted = false;
@@ -112,6 +119,7 @@
         }
     }
 
+    // updates fields and stats based on naval selection
     function selectionNaval(e) {
         if (e.detail.text == "cloak") {
             $aFields.unit = "dinghy";

@@ -9,7 +9,7 @@
             class="health"
             style="width: {Math.floor((100 / maxHealth) * health)}%"
         >
-            <p class="health-fraction">{health}/{maxHealth}</p>
+            <p class="health-fraction">❤️{health}/{maxHealth}</p>
         </div>
     </div>
 </div>
