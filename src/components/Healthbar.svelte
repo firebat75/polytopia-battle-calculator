@@ -17,6 +17,7 @@
 <style>
     .hbody {
         text-align: center;
+        margin: 0 4px 0 4px;
     }
 
     .bar {

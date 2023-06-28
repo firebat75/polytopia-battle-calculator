@@ -161,6 +161,7 @@
             stats.health = data[e.detail.text].health;
             carrying = e.detail.text;
         }
+        $aImg.icon = data[fields.unit].img;
         console.log(stats);
     }
 </script>
@@ -233,7 +234,6 @@
             <h3>Range: {stats.range}</h3>
         </div>
         <div class="unit-image-container">
-            <img class="unit-image" src={$aImg.icon} alt="unit placeholder" />
             <StatsCardA />
         </div>
     </div>
