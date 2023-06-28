@@ -273,15 +273,15 @@
         width: 68px;
     }
 
-    .unit-image {
+    /* .unit-image {
         max-width: 200px;
         max-height: 200px;
         margin: auto;
-    }
+    } */
 
-    .unit-image-container {
+    /* .unit-image-container {
         height: 200px;
         width: 200px;
         display: block !important;
-    }
+    } */
 </style>
