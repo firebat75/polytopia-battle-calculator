@@ -8,8 +8,6 @@
         dImg,
     } from "../lib/stores";
     import Healthbar from "./Healthbar.svelte";
-
-    $aFields: console.log($aFields);
 </script>
 
 <div class="card">

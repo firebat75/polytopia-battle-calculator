@@ -2,7 +2,7 @@
     import UnitSelectDropdown from "../components/UnitSelectDropdown.svelte";
     import { aStats, aFields, aImg } from "../lib/stores";
     import StatsCardA from "./StatsCardA.svelte";
-    let fields = {
+    $aFields = {
         unit: "warrior",
         veteran: false,
         boosted: false,
@@ -11,24 +11,18 @@
         carrying: "warrior",
     };
 
-    $: {
-        fields;
-        aFields.update((n) => fields);
-        console.log("DEFENDER FIELDS HAVE BEEN UPDATED");
-    }
-
     // checks and ensures health field is a valid integer
     function checkHealth() {
-        if (stats.health == "") {
-            stats.health = 0;
-        } else if (!isNaN(stats.health)) {
-            stats.health = parseInt(stats.health);
+        if ($aStats.health == "") {
+            $aStats.health = 0;
+        } else if (!isNaN($aStats.health)) {
+            $aStats.health = parseInt($aStats.health);
         } else {
-            stats.health = stats.maxHealth;
+            $aStats.health = $aStats.maxHealth;
         }
     }
     $: {
-        stats.health;
+        $aStats.health;
         checkHealth();
     }
 
@@ -45,8 +39,8 @@
     ];
     const ships = ["boat", "ship", "battleship"];
 
-    let unit = fields.unit;
-    $: unit = fields.unit;
+    let unit = $aFields.unit;
+    $: unit = $aFields.unit;
 
     import data from "../lib/units.json";
     let units = [];
@@ -54,8 +48,7 @@
         units.push(unit);
     }
 
-    export let stats = {};
-    stats = {
+    $aStats = {
         maxHealth: 10,
         health: 10,
         attack: 2,
@@ -64,65 +57,55 @@
         range: 1,
     };
 
-    $: {
-        stats;
-        aStats.update((n) => stats);
-        console.log("ATTACKER STATS HAVE BEEN UPDATED");
-    }
-
-    let naval = false;
     let selectedNaval = "";
     let vetAble = true;
-    let carrying = "";
 
     function vetted() {
-        fields.veteran = !fields.veteran;
-        if (fields.veteran == true) {
-            stats.maxHealth += 5;
-            stats.health += 5;
+        $aFields.veteran = !$aFields.veteran;
+        if ($aFields.veteran == true) {
+            $aStats.maxHealth += 5;
+            $aStats.health += 5;
         } else {
-            stats.maxHealth -= 5;
-            stats.health -= 5;
+            $aStats.maxHealth -= 5;
+            $aStats.health -= 5;
         }
-        console.log(fields);
     }
 
     function boosted() {
-        fields.boosted = !fields.boosted;
-        if (fields.boosted == true) {
-            stats.attack += 0.5;
-            stats.range += 1;
+        $aFields.boosted = !$aFields.boosted;
+        if ($aFields.boosted == true) {
+            $aStats.attack += 0.5;
+            $aStats.range += 1;
         } else {
-            stats.attack -= 0.5;
-            stats.range -= 1;
+            $aStats.attack -= 0.5;
+            $aStats.range -= 1;
         }
-        console.log(fields);
     }
 
     function selection(e) {
-        fields.veteran = false;
-        fields.boosted = false;
-        fields.unit = e.detail.text;
-        $aImg.icon = data[fields.unit].img;
-        stats = {
-            maxHealth: data[fields.unit].health,
-            health: data[fields.unit].health,
-            attack: data[fields.unit].attack,
-            defence: data[fields.unit].defence,
-            movement: data[fields.unit].movement,
-            range: data[fields.unit].range,
+        $aFields.veteran = false;
+        $aFields.boosted = false;
+        $aFields.unit = e.detail.text;
+        $aImg.icon = data[$aFields.unit].img;
+        $aStats = {
+            maxHealth: data[$aFields.unit].health,
+            health: data[$aFields.unit].health,
+            attack: data[$aFields.unit].attack,
+            defence: data[$aFields.unit].defence,
+            movement: data[$aFields.unit].movement,
+            range: data[$aFields.unit].range,
         };
-        if (ships.includes(fields.unit)) {
+        if (ships.includes($aFields.unit)) {
             $aFields.naval = true;
-            selectedNaval = fields.unit;
-            carrying = "warrior";
-            stats.maxHealth = data["warrior"].health;
-            stats.health = data["warrior"].health;
+            selectedNaval = $aFields.unit;
+            $aFields.carrying = "warrior";
+            $aStats.maxHealth = data["warrior"].health;
+            $aStats.health = data["warrior"].health;
         } else {
             $aFields.naval = false;
             selectedNaval = "";
         }
-        if (nonVet.includes(fields.unit)) {
+        if (nonVet.includes($aFields.unit)) {
             vetAble = false;
         } else {
             vetAble = true;
@@ -131,35 +114,35 @@
 
     function selectionNaval(e) {
         if (e.detail.text == "cloak") {
-            fields.unit = "dinghy";
-            stats = {
-                maxHealth: data[fields.unit].health,
-                health: data[fields.unit].health,
-                attack: data[fields.unit].attack,
-                defence: data[fields.unit].defence,
-                movement: data[fields.unit].movement,
-                range: data[fields.unit].range,
+            $aFields.unit = "dinghy";
+            $aStats = {
+                maxHealth: data[$aFields.unit].health,
+                health: data[$aFields.unit].health,
+                attack: data[$aFields.unit].attack,
+                defence: data[$aFields.unit].defence,
+                movement: data[$aFields.unit].movement,
+                range: data[$aFields.unit].range,
             };
-            carrying = "cloak";
+            $aFields.carrying = "cloak";
         } else if (e.detail.text == "dagger") {
-            fields.unit = "pirate";
-            stats = {
-                maxHealth: data[fields.unit].health,
-                health: data[fields.unit].health,
-                attack: data[fields.unit].attack,
-                defence: data[fields.unit].defence,
-                movement: data[fields.unit].movement,
-                range: data[fields.unit].range,
+            $aFields.unit = "pirate";
+            $aStats = {
+                maxHealth: data[$aFields.unit].health,
+                health: data[$aFields.unit].health,
+                attack: data[$aFields.unit].attack,
+                defence: data[$aFields.unit].defence,
+                movement: data[$aFields.unit].movement,
+                range: data[$aFields.unit].range,
             };
-            carrying = "dagger";
+            $aFields.carrying = "dagger";
         } else {
             $aFields.carrying = e.detail.text;
-            fields.unit = selectedNaval;
-            stats.maxHealth = data[e.detail.text].health;
-            stats.health = data[e.detail.text].health;
-            carrying = e.detail.text;
+            // $aFields.unit = selectedNaval;
+            $aStats.maxHealth = data[e.detail.text].health;
+            $aStats.health = data[e.detail.text].health;
+            $aFields.carrying = e.detail.text;
         }
-        $aImg.icon = data[fields.unit].img;
+        $aImg.icon = data[$aFields.unit].img;
     }
 </script>
 
@@ -187,7 +170,7 @@
                         type="checkbox"
                         id="veteran"
                         name="veteran"
-                        bind:checked={fields.veteran}
+                        bind:checked={$aFields.veteran}
                         on:click={vetted}
                     />
                 </div>
@@ -199,7 +182,7 @@
                     type="checkbox"
                     id="boosted"
                     name="boosted"
-                    bind:checked={fields.boosted}
+                    bind:checked={$aFields.boosted}
                     on:click={boosted}
                 />
             </div>
@@ -210,7 +193,7 @@
                     type="text"
                     class="health"
                     name="attacker-health"
-                    bind:value={stats.health}
+                    bind:value={$aStats.health}
                     on:change={checkHealth}
                 />
             </div>
