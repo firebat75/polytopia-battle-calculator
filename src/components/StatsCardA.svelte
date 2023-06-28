@@ -8,10 +8,17 @@
         dImg,
     } from "../lib/stores";
     import Healthbar from "./Healthbar.svelte";
+
+    function printFields() {
+        console.log($aFields);
+    }
 </script>
 
 <div class="card">
-    <h3>{$aFields.unit}</h3>
+    <h3>
+        {$aFields.unit}
+        {#if $aFields.naval}({$aFields.carrying}){/if}
+    </h3>
     <Healthbar maxHealth={$aStats.maxHealth} health={$aStats.health} />
     <img class="unit-img" src={$aImg.icon} alt="attacker-img" />
     <div class="display-stats">

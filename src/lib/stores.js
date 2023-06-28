@@ -16,6 +16,8 @@ export const aFields = writable({
     veteran: false,
     boosted: false,
     health: 10,
+    naval: false,
+    carrying: "warrior"
 });
 
 export const aImg = writable({

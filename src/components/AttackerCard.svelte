@@ -112,13 +112,13 @@
             range: data[fields.unit].range,
         };
         if (ships.includes(fields.unit)) {
-            naval = true;
+            $aFields.naval = true;
             selectedNaval = fields.unit;
             carrying = "warrior";
             stats.maxHealth = data["warrior"].health;
             stats.health = data["warrior"].health;
         } else {
-            naval = false;
+            $aFields.naval = false;
             selectedNaval = "";
         }
         if (nonVet.includes(fields.unit)) {
@@ -152,7 +152,7 @@
             };
             carrying = "dagger";
         } else {
-            console.log("CARRYING " + e.detail.text);
+            $aFields.carrying = e.detail.text;
             fields.unit = selectedNaval;
             stats.maxHealth = data[e.detail.text].health;
             stats.health = data[e.detail.text].health;
@@ -172,7 +172,7 @@
                 <UnitSelectDropdown on:selection={selection} />
             </div>
 
-            {#if naval}
+            {#if $aFields.naval}
                 <div class="inline">
                     <label for="attacker-naval-carry">Carrying</label>
                     <UnitSelectDropdown on:selection={selectionNaval} />
@@ -217,18 +217,6 @@
     </div>
 
     <div class="unit-stats">
-        <div class="stat-text">
-            <h3>Unit: {fields.unit}</h3>
-            {#if naval}
-                <h5>Carrying: {carrying}</h5>
-            {/if}
-            <h3>Max Health: {stats.maxHealth}</h3>
-            <h3>Health: {stats.health}</h3>
-            <h3>Attack: {stats.attack}</h3>
-            <h3>Defence: {stats.defence}</h3>
-            <h3>Movement: {stats.movement}</h3>
-            <h3>Range: {stats.range}</h3>
-        </div>
         <div class="unit-image-container">
             <StatsCardA />
         </div>
