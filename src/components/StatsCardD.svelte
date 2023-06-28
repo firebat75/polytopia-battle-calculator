@@ -11,7 +11,7 @@
     <Healthbar maxHealth={$dStats.maxHealth} health={$dStats.health} />
     <img class="unit-img" src={$dImg.icon} alt="attacker-img" />
     <div class="display-stats">
-        <p>⚔️ {$dStats.attack}</p>
+        <p>🗡️ {$dStats.attack}</p>
         <p>🛡️ {$dStats.defence}</p>
         <p>🐎 {$dStats.movement}</p>
         <p>🏹 {$dStats.range}</p>
