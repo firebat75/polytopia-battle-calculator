@@ -1,6 +1,14 @@
 <script>
-    import { aStats, dStats, dFields, aFields } from "../lib/stores";
+    import {
+        aStats,
+        dStats,
+        dFields,
+        aFields,
+        aImg,
+        dImg,
+    } from "../lib/stores";
     import Modal from "./Modal.svelte";
+    import Healthbar from "./Healthbar.svelte";
     let showModal = false;
 
     function calcAttackForce() {
@@ -58,10 +66,26 @@
         <li>attacker takes {td[1]} of health in retaliation</li>
     </ul>
 
-    <ul>
-        <li>defender has {$dStats.health - td[0]} remaining health</li>
-        <li>attacker has {$aStats.health - td[1]} remaining health</li>
-    </ul>
+    <div class="unit-ui">
+        <div class="unit-card">
+            <div class="hbar">
+                <Healthbar
+                    maxHealth={$aStats.maxHealth}
+                    health={$aStats.health - td[0]}
+                />
+            </div>
+            <img src={$aImg.icon} alt="attacker unit icon" />
+        </div>
+        <div class="unit-card">
+            <div class="hbar">
+                <Healthbar
+                    maxHealth={$dStats.maxHealth}
+                    health={$dStats.health - td[0]}
+                />
+            </div>
+            <img src={$dImg.icon} alt="attacker unit icon" />
+        </div>
+    </div>
 </Modal>
 
 <style>
@@ -69,5 +93,20 @@
         margin: 10px;
         padding: 10px;
         border: solid green 2px;
+    }
+
+    .unit-ui {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .unit-card {
+        margin: 5px;
+        justify-content: center;
+    }
+
+    .hbar {
+        padding-left: 30px;
+        padding-right: 30px;
     }
 </style>
