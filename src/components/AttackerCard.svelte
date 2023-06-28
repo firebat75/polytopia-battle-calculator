@@ -1,7 +1,7 @@
 <script>
     import UnitSelectDropdown from "../components/UnitSelectDropdown.svelte";
-    import { aStats, aFields, aImg } from "../lib/stores";
     import StatsCardA from "./StatsCardA.svelte";
+    import { aStats, aFields, aImg } from "../lib/stores";
 
     // set fields to default (warrior) on load
     $aFields = {
@@ -40,16 +40,16 @@
         checkHealth();
     }
 
-    // units that can carry other units (ships)
-    const ships = ["boat", "ship", "battleship"];
-    let selectedNaval = "";
-
     // create array of each unit stats to pull from
     import data from "../lib/units.json";
     let units = [];
     for (const unit in data) {
         units.push(unit);
     }
+
+    // units that can carry other units (ships)
+    const ships = ["boat", "ship", "battleship"];
+    let selectedNaval = "";
 
     // units that can't have veteran toggled on
     let vetAble = true;
@@ -144,7 +144,6 @@
             };
             $aFields.carrying = "dagger";
         } else {
-            $aFields.carrying = e.detail.text;
             $aStats.maxHealth = data[e.detail.text].health;
             $aStats.health = data[e.detail.text].health;
             $aFields.carrying = e.detail.text;

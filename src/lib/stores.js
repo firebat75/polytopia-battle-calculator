@@ -39,6 +39,8 @@ export const dFields = writable({
     poisoned: false,
     dBonus: 1,
     health: 10,
+    naval: false,
+    carrying: "warrior"
 });
 
 export const dImg = writable({
