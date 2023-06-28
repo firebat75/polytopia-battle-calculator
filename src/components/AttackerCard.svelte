@@ -7,6 +7,7 @@
         veteran: false,
         boosted: false,
         health: 10,
+        naval: false,
     };
 
     $: {
@@ -100,11 +101,8 @@
     function selection(e) {
         fields.veteran = false;
         fields.boosted = false;
-        console.log(e.detail.text);
         fields.unit = e.detail.text;
         $aImg.icon = data[fields.unit].img;
-        console.log($aImg.icon);
-        console.log(data[fields.unit].health);
         stats = {
             maxHealth: data[fields.unit].health,
             health: data[fields.unit].health,
@@ -128,7 +126,6 @@
         } else {
             vetAble = true;
         }
-        console.log(stats);
     }
 
     function selectionNaval(e) {
@@ -162,7 +159,6 @@
             carrying = e.detail.text;
         }
         $aImg.icon = data[fields.unit].img;
-        console.log(stats);
     }
 </script>
 
