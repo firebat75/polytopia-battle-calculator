@@ -16,7 +16,6 @@
 
 <style>
     .hbody {
-        margin: 1em;
         text-align: center;
     }
 

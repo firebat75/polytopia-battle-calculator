@@ -18,6 +18,10 @@ export const aFields = writable({
     health: 10,
 });
 
+export const aImg = writable({
+    icon: "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
+})
+
 export const dStats = writable({
     maxHealth: 10,
     health: 10,
@@ -34,3 +38,7 @@ export const dFields = writable({
     dBonus: 1,
     health: 10,
 });
+
+export const dImg = writable({
+    icon: "https://static.wikia.nocookie.net/supertribes/images/1/11/WarriorX.png"
+})

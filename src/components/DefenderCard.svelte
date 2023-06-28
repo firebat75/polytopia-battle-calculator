@@ -1,6 +1,6 @@
 <script>
     import UnitSelectDropdown from "../components/UnitSelectDropdown.svelte";
-    import { dStats, dFields } from "../lib/stores";
+    import { dStats, dFields, dImg } from "../lib/stores";
     let fields = {
         unit: "warrior",
         veteran: false,
@@ -117,6 +117,7 @@
         console.log(e.detail.text);
         fields.unit = e.detail.text;
         console.log(data[fields.unit].health);
+        $dImg.icon = data[fields.unit].img;
         stats = {
             maxHealth: data[fields.unit].health,
             health: data[fields.unit].health,
@@ -278,11 +279,7 @@
             <h3>Range: {stats.range}</h3>
         </div>
         <div class="unit-image-container">
-            <img
-                class="unit-image"
-                src={data[fields.unit].img}
-                alt="unit placeholder"
-            />
+            <img class="unit-image" src={$dImg.icon} alt="unit placeholder" />
         </div>
         <div />
     </div>

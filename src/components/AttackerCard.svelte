@@ -1,7 +1,7 @@
 <script>
     import UnitSelectDropdown from "../components/UnitSelectDropdown.svelte";
-    import { aStats, aFields } from "../lib/stores";
-    import Healthbar from "./Healthbar.svelte";
+    import { aStats, aFields, aImg } from "../lib/stores";
+    import StatsCardA from "./StatsCardA.svelte";
     let fields = {
         unit: "warrior",
         veteran: false,
@@ -102,6 +102,8 @@
         fields.boosted = false;
         console.log(e.detail.text);
         fields.unit = e.detail.text;
+        $aImg.icon = data[fields.unit].img;
+        console.log($aImg.icon);
         console.log(data[fields.unit].health);
         stats = {
             maxHealth: data[fields.unit].health,
@@ -231,12 +233,8 @@
             <h3>Range: {stats.range}</h3>
         </div>
         <div class="unit-image-container">
-            <img
-                class="unit-image"
-                src={data[fields.unit].img}
-                alt="unit placeholder"
-            />
-            <Healthbar maxHealth={stats.maxHealth} health={stats.health} />
+            <img class="unit-image" src={$aImg.icon} alt="unit placeholder" />
+            <StatsCardA />
         </div>
     </div>
 </div>

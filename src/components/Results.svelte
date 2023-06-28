@@ -48,7 +48,6 @@
     <p>{JSON.stringify($dFields)}</p>
     <h1>{td}</h1>
     <button on:click={calculate}>calculate</button>
-    <button on:click={calculate}> show modal </button>
 </div>
 
 <Modal bind:showModal>
@@ -56,7 +55,7 @@
 
     <ul>
         <li>defender takes {td[0]} of damage</li>
-        <li>attacker takes {td[1]} of health retaliation</li>
+        <li>attacker takes {td[1]} of health in retaliation</li>
     </ul>
 
     <ul>
