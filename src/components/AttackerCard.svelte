@@ -8,6 +8,7 @@
         boosted: false,
         health: 10,
         naval: false,
+        carrying: "warrior",
     };
 
     $: {

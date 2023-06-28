@@ -9,9 +9,7 @@
     } from "../lib/stores";
     import Healthbar from "./Healthbar.svelte";
 
-    function printFields() {
-        console.log($aFields);
-    }
+    $aFields: console.log($aFields);
 </script>
 
 <div class="card">
