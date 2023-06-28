@@ -80,10 +80,10 @@
         $aFields.boosted = !$aFields.boosted;
         if ($aFields.boosted == true) {
             $aStats.attack += 0.5;
-            $aStats.range += 1;
+            $aStats.movement += 1;
         } else {
             $aStats.attack -= 0.5;
-            $aStats.range -= 1;
+            $aStats.movement -= 1;
         }
     }
 
