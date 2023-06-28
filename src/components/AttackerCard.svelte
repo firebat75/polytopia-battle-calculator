@@ -137,7 +137,6 @@
             $aFields.carrying = "dagger";
         } else {
             $aFields.carrying = e.detail.text;
-            // $aFields.unit = selectedNaval;
             $aStats.maxHealth = data[e.detail.text].health;
             $aStats.health = data[e.detail.text].health;
             $aFields.carrying = e.detail.text;
@@ -208,9 +207,6 @@
 </div>
 
 <style>
-    .stat-text {
-        display: block !important;
-    }
     label {
         padding: 5px;
     }
@@ -236,20 +232,4 @@
     .health {
         width: 20px;
     }
-
-    .unit-choice {
-        width: 68px;
-    }
-
-    /* .unit-image {
-        max-width: 200px;
-        max-height: 200px;
-        margin: auto;
-    } */
-
-    /* .unit-image-container {
-        height: 200px;
-        width: 200px;
-        display: block !important;
-    } */
 </style>
