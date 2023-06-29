@@ -12,9 +12,19 @@
         <div class="health">
             <div class="ticks">
                 {#each Array(health) as _, i}
-                    <p class="tick-a" style="width: {100 / maxHealth}%">
-                        &nbsp;
-                    </p>
+                    {#if (i + 1) % 5 == 0 && i < maxHealth - 1}
+                        <p
+                            class="tick-a"
+                            style="width: {100 /
+                                maxHealth}%; border-right: 2px solid black"
+                        >
+                            &nbsp;
+                        </p>
+                    {:else}
+                        <p class="tick-a" style="width: {100 / maxHealth}%">
+                            &nbsp;
+                        </p>
+                    {/if}
                 {/each}
                 {#each Array(Math.max(maxHealth - health, 0)) as _, i}
                     <p class="tick-b" style="width: {100 / maxHealth}%">
@@ -28,6 +38,7 @@
 
 <style>
     .health-fraction {
+        font-size: 1.5em;
         color: white;
         margin: 0;
         position: absolute;
@@ -46,21 +57,16 @@
     .tick-a {
         color: rgb(0, 255, 0);
         margin: 0;
-        height: 100;
-        outline: solid black 1px;
-        background: rgb(0, 100, 0);
-        background: linear-gradient(
-            0deg,
-            rgba(0, 100, 0, 1) 0%,
-            rgba(0, 255, 0, 1) 66%,
-            rgba(0, 100, 0, 1) 100%
-        );
+        height: 2em;
+        outline: solid rgba(0, 0, 0, 0.4) 1px;
+        background: rgb(238, 174, 202);
+        background: linear-gradient(to top, #0cc337 0%, #49e259 100%);
     }
     .tick-b {
         color: rgb(177, 177, 177);
         margin: 0;
-        height: 100;
-        outline: solid black 1px;
+        height: 2em;
+        outline: solid rgba(0, 0, 0, 0.4) 1px;
         background-color: rgb(177, 177, 177);
     }
 
@@ -73,5 +79,6 @@
     .bar {
         width: 100%;
         outline: 3px solid black;
+        height: 2em;
     }
 </style>

@@ -77,7 +77,7 @@
             <div class="hbar">
                 <Healthbar
                     maxHealth={$aStats.maxHealth}
-                    health={$aStats.health - td[1]}
+                    health={Math.max($aStats.health - td[1], 0)}
                 />
             </div>
             <span
@@ -89,7 +89,7 @@
             <div class="hbar">
                 <Healthbar
                     maxHealth={$dStats.maxHealth}
-                    health={$dStats.health - td[0]}
+                    health={Math.max($dStats.health - td[0], 0)}
                 />
             </div>
             <span
