@@ -167,11 +167,10 @@
 </script>
 
 <div class="unit-card">
+    <h2>Defender</h2>
     <div class="toprow">
         <div id="attacker-input-div">
             <form id="attacker-input-form">
-                <h2>defender</h2>
-
                 <div class="field-div">
                     <label for="attacker-unit-choice">Unit</label>
                     <UnitSelectDropdown on:selection={selection} />
@@ -301,6 +300,7 @@
         background-color: rgba(0, 0, 0, 0.309);
         padding: 1rem;
         border-radius: 1rem;
+        text-align: center;
     }
 
     label {

@@ -153,11 +153,10 @@
 </script>
 
 <div class="unit-card">
+    <h2>Attacker</h2>
     <div class="toprow">
         <div id="attacker-input-div">
             <form id="attacker-input-form">
-                <h2>attacker</h2>
-
                 <div class="inline">
                     <label for="attacker-unit-choice">Unit</label>
                     <UnitSelectDropdown on:selection={selection} />
@@ -240,6 +239,9 @@
 </div>
 
 <style>
+    .unit-card {
+        text-align: center;
+    }
     .increment {
         background-color: rgb(0, 116, 116);
         padding: 5px;
