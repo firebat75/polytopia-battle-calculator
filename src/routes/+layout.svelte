@@ -1,11 +1,13 @@
-<script></script>
+<script>
+    import gate from "$lib/gate.png";
+</script>
 
 <header>
     <div>
-        <span class="circle" />
+        <img class="gate" src={gate} alt="yaddak gate of power" />
     </div>
     <div>
-        <h1>Polytopia Battle Calculator</h1>
+        <h1 class="title">Polytopia Battle Calculator</h1>
     </div>
 </header>
 
@@ -19,22 +21,31 @@
 </footer>
 
 <style>
-    main {
-        border: solid rosybrown;
+    header {
+        display: flex;
+        justify-content: center;
+    }
+
+    .title {
+        margin: 1rem;
+        font-weight: 300;
+        font-size: xx-large;
     }
     header div {
         display: inline-block;
     }
 
-    .circle {
-        height: 25px;
-        width: 25px;
-        background-color: #bbb;
-        border-radius: 50%;
-        display: inline-block;
+    .gate {
+        height: 4rem;
     }
 
     footer p {
         text-align: center;
+        color: black;
+    }
+
+    hr {
+        border-top: 1px solid black;
+        border-bottom: none;
     }
 </style>

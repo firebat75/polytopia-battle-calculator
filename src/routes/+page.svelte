@@ -26,18 +26,17 @@
 <style>
     #calculator {
         margin: 5px;
-        border: solid red;
         min-height: 85vh;
     }
 
     .units {
         margin: 5px;
-        border: solid orange;
+        display: flex;
+        justify-content: center;
     }
 
     .unit-card {
-        border: solid black;
         display: inline-block;
-        margin: 3px;
+        margin: 1rem;
     }
 </style>

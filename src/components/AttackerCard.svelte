@@ -214,6 +214,12 @@
 </div>
 
 <style>
+    .unit-card {
+        background-color: rgba(0, 0, 0, 0.309);
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
     label {
         padding: 5px;
     }
@@ -232,11 +238,7 @@
         align-items: center;
     }
 
-    .unit-stats {
-        outline: solid blue 1px;
-    }
-
     .health {
-        width: 20px;
+        width: 1rem;
     }
 </style>

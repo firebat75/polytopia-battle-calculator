@@ -29,11 +29,11 @@
 <style>
     .card {
         padding: 5px;
-        outline: 3px solid blue;
     }
     h3 {
         text-align: center;
         margin: 0;
+        text-shadow: 1px 1px 0px #000000;
     }
     .attacker-icon {
         height: 200px;

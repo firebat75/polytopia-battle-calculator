@@ -55,13 +55,8 @@
     }
 </script>
 
-<div class="main">
-    <p>{JSON.stringify($aStats)}</p>
-    <p>{JSON.stringify($aFields)}</p>
-    <p>{JSON.stringify($dStats)}</p>
-    <p>{JSON.stringify($dFields)}</p>
-    <h1>{td}</h1>
-    <button on:click={calculate}>calculate</button>
+<div class="btn-container">
+    <button class="calc-button" on:click={calculate}>CALCULATE</button>
 </div>
 
 <Modal bind:showModal>
@@ -101,6 +96,34 @@
 </Modal>
 
 <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+    .btn-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .calc-button {
+        background-color: #2aa2eb;
+        color: white;
+        font-size: x-large;
+        padding-top: 0.5rem;
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+        padding-bottom: 0.3rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-weight: 300;
+        letter-spacing: -1px;
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .calc-button:hover {
+        background-color: white;
+        color: black;
+        transform: scale(1.05);
+    }
+
     .attacker-icon {
         height: 200px;
         width: 200px;

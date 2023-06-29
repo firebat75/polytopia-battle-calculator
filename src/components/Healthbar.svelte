@@ -62,6 +62,7 @@
         background: rgb(238, 174, 202);
         background: linear-gradient(to top, #0cc337 0%, #49e259 100%);
     }
+
     .tick-b {
         color: rgb(177, 177, 177);
         margin: 0;
