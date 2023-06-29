@@ -6,6 +6,8 @@
 
 <svelte:head>
     <title>Battle Calculator</title>
+
+    <link rel="stylesheet" href="src\lib\global.css" />
 </svelte:head>
 
 <div id="calculator">
