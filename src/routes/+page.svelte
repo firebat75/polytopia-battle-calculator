@@ -27,6 +27,7 @@
     #calculator {
         margin: 5px;
         border: solid red;
+        min-height: 85vh;
     }
 
     .units {
