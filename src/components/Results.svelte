@@ -15,12 +15,18 @@
         return $aStats.attack * ($aStats.health / $aStats.maxHealth);
     }
 
+    function calcDBonus() {
+        if ($dFields.poisoned) {
+            return 1;
+        } else {
+            return $dFields.dBonus;
+        }
+    }
+
+    // negate defence bonus if defender is poisoned
     function calcDefenceForce() {
-        return (
-            $dStats.defence *
-            ($dStats.health / $dStats.maxHealth) *
-            $dFields.dBonus
-        );
+        const dB = calcDBonus();
+        return $dStats.defence * ($dStats.health / $dStats.maxHealth) * dB;
     }
 
     function calcTotalDamage() {
@@ -71,7 +77,7 @@
             <div class="hbar">
                 <Healthbar
                     maxHealth={$aStats.maxHealth}
-                    health={$aStats.health - td[0]}
+                    health={$aStats.health - td[1]}
                 />
             </div>
             <img src={$aImg.icon} alt="attacker unit icon" />
