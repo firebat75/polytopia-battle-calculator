@@ -167,114 +167,124 @@
 </script>
 
 <div class="unit-card">
-    <div id="attacker-input-div">
-        <form id="attacker-input-form">
-            <h2>defender</h2>
+    <div class="toprow">
+        <div id="attacker-input-div">
+            <form id="attacker-input-form">
+                <h2>defender</h2>
 
-            <div class="field-div">
-                <label for="attacker-unit-choice">Unit</label>
-                <UnitSelectDropdown on:selection={selection} />
-            </div>
-
-            {#if $dFields.naval}
                 <div class="field-div">
-                    <label for="attacker-naval-carry">Carrying</label>
-                    <UnitSelectDropdown on:selection={selectionNaval} />
+                    <label for="attacker-unit-choice">Unit</label>
+                    <UnitSelectDropdown on:selection={selection} />
                 </div>
-            {/if}
 
-            {#if vetAble}
+                {#if $dFields.naval}
+                    <div class="field-div">
+                        <label for="attacker-naval-carry">Carrying</label>
+                        <UnitSelectDropdown on:selection={selectionNaval} />
+                    </div>
+                {/if}
+
+                {#if vetAble}
+                    <div class="field-div">
+                        <label for="veteran">Veteran</label>
+                        <input
+                            class="checkbox"
+                            type="checkbox"
+                            id="veteran"
+                            name="veteran"
+                            bind:checked={$dFields.veteran}
+                            on:click={vetted}
+                        />
+                    </div>
+                {/if}
+
                 <div class="field-div">
-                    <label for="veteran">Veteran</label>
+                    <label for="poisoned">Poisoned</label>
                     <input
                         class="checkbox"
                         type="checkbox"
-                        id="veteran"
-                        name="veteran"
-                        bind:checked={$dFields.veteran}
-                        on:click={vetted}
+                        id="poisoned"
+                        name="poisoned"
+                        bind:checked={$dFields.poisoned}
+                        on:click={poisoned}
                     />
                 </div>
-            {/if}
 
-            <div class="field-div">
-                <label for="poisoned">Poisoned</label>
-                <input
-                    class="checkbox"
-                    type="checkbox"
-                    id="poisoned"
-                    name="poisoned"
-                    bind:checked={$dFields.poisoned}
-                    on:click={poisoned}
-                />
-            </div>
+                <div class="field-div">
+                    <p>Defence Bonus</p>
+                    <div class="dbonus-radio">
+                        <input
+                            class="radio"
+                            type="radio"
+                            name="option"
+                            value="option1"
+                            id="option1"
+                            on:click={dBonus0}
+                            checked
+                        />
+                        <label for="option1">None</label><br />
 
-            <div class="field-div">
-                <p>Defence Bonus</p>
-                <div class="dbonus-radio">
-                    <input
-                        class="radio"
-                        type="radio"
-                        name="option"
-                        value="option1"
-                        id="option1"
-                        on:click={dBonus0}
-                        checked
-                    />
-                    <label for="option1">None</label><br />
+                        <input
+                            class="radio"
+                            type="radio"
+                            name="option"
+                            value="option2"
+                            id="option2"
+                            on:click={dBonus1}
+                        />
+                        <label for="option2">x1.5</label><br />
 
-                    <input
-                        class="radio"
-                        type="radio"
-                        name="option"
-                        value="option2"
-                        id="option2"
-                        on:click={dBonus1}
-                    />
-                    <label for="option2">x1.5</label><br />
-
-                    <input
-                        class="radio"
-                        type="radio"
-                        name="option"
-                        value="option3"
-                        id="option3"
-                        on:click={dBonus2}
-                    />
-                    <label for="option3">x4</label><br />
+                        <input
+                            class="radio"
+                            type="radio"
+                            name="option"
+                            value="option3"
+                            id="option3"
+                            on:click={dBonus2}
+                        />
+                        <label for="option3">x4</label><br />
+                    </div>
                 </div>
-            </div>
 
-            <div class="field-div">
-                <label for="attacker-health">Health</label>
-                <span
-                    class="increment lt"
-                    on:click={() => {
-                        $dStats.health -= 1;
-                    }}>&lt</span
-                >
-                <input
-                    type="text"
-                    class="health"
-                    name="attacker-health"
-                    bind:value={$dStats.health}
-                    on:change={checkHealth}
-                />
-                <span
-                    class="increment gt"
-                    on:click={() => {
-                        $dStats.health += 1;
-                    }}>&gt</span
-                >
-            </div>
-        </form>
-    </div>
-
-    <div class="unit-stats">
-        <div class="unit-image-container">
-            <StatsCardD />
+                <div class="field-div">
+                    <label for="attacker-health">Health</label>
+                    <span
+                        class="increment lt"
+                        on:click={() => {
+                            $dStats.health -= 1;
+                        }}>-</span
+                    >
+                    <input
+                        type="text"
+                        class="health"
+                        name="attacker-health"
+                        bind:value={$dStats.health}
+                        on:change={checkHealth}
+                    />
+                    <span
+                        class="increment gt"
+                        on:click={() => {
+                            $dStats.health += 1;
+                        }}>+</span
+                    >
+                </div>
+            </form>
         </div>
-        <div />
+
+        <div class="unit-stats">
+            <div class="unit-image-container">
+                <StatsCardD />
+            </div>
+            <div />
+        </div>
+    </div>
+    <div class="display-stats">
+        <p>🗡️ {$dStats.attack}</p>
+        <p>
+            🛡️ {$dStats.defence}{#if $dFields.poisoned}(-30%){/if}
+        </p>
+        <p>🐎 {$dStats.movement}</p>
+        <p>🏹 {$dStats.range}</p>
     </div>
 </div>
 
@@ -300,7 +310,7 @@
     input {
         padding: 3px;
     }
-    .unit-card {
+    .toprow {
         display: flex;
         width: max-content;
     }
@@ -323,5 +333,12 @@
 
     .health {
         width: 1rem;
+    }
+
+    .display-stats {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
 </style>

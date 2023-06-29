@@ -14,14 +14,6 @@
         veteran={$dFields.veteran}
     />
     <span class="defender-icon" style="background-image: url('{$dImg.icon}')" />
-    <div class="display-stats">
-        <p>🗡️ {$dStats.attack}</p>
-        <p>
-            🛡️ {$dStats.defence}{#if $dFields.poisoned}(-30%){/if}
-        </p>
-        <p>🐎 {$dStats.movement}</p>
-        <p>🏹 {$dStats.range}</p>
-    </div>
 </div>
 
 <style>
@@ -38,14 +30,8 @@
         min-height: 10rem;
         min-width: 15rem;
         display: block;
-        background-size: auto;
+        background-size: 10rem;
         background-position: bottom center;
         background-repeat: no-repeat;
-    }
-
-    .display-stats {
-        text-align: center;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 </style>

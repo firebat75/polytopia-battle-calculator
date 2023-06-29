@@ -153,77 +153,89 @@
 </script>
 
 <div class="unit-card">
-    <div id="attacker-input-div">
-        <form id="attacker-input-form">
-            <h2>attacker</h2>
+    <div class="toprow">
+        <div id="attacker-input-div">
+            <form id="attacker-input-form">
+                <h2>attacker</h2>
 
-            <div class="inline">
-                <label for="attacker-unit-choice">Unit</label>
-                <UnitSelectDropdown on:selection={selection} />
-            </div>
-
-            {#if $aFields.naval}
                 <div class="inline">
-                    <label for="attacker-naval-carry">Carrying</label>
-                    <UnitSelectDropdown on:selection={selectionNaval} />
+                    <label for="attacker-unit-choice">Unit</label>
+                    <UnitSelectDropdown on:selection={selection} />
                 </div>
-            {/if}
 
-            {#if vetAble}
+                {#if $aFields.naval}
+                    <div class="inline">
+                        <label for="attacker-naval-carry">Carrying</label>
+                        <UnitSelectDropdown on:selection={selectionNaval} />
+                    </div>
+                {/if}
+
+                {#if vetAble}
+                    <div class="inline">
+                        <label for="veteran">Veteran</label>
+                        <input
+                            class="checkbox"
+                            type="checkbox"
+                            id="veteran"
+                            name="veteran"
+                            bind:checked={$aFields.veteran}
+                            on:click={vetted}
+                        />
+                    </div>
+                {/if}
+
                 <div class="inline">
-                    <label for="veteran">Veteran</label>
+                    <label for="boosted">Combat Boost</label>
                     <input
-                        class="checkbox"
                         type="checkbox"
-                        id="veteran"
-                        name="veteran"
-                        bind:checked={$aFields.veteran}
-                        on:click={vetted}
+                        class="checkbox"
+                        id="boosted"
+                        name="boosted"
+                        bind:checked={$aFields.boosted}
+                        on:click={boosted}
                     />
                 </div>
-            {/if}
 
-            <div class="inline">
-                <label for="boosted">Combat Boost</label>
-                <input
-                    type="checkbox"
-                    class="checkbox"
-                    id="boosted"
-                    name="boosted"
-                    bind:checked={$aFields.boosted}
-                    on:click={boosted}
-                />
-            </div>
-
-            <div class="inline">
-                <label for="attacker-health">Health</label>
-                <span
-                    class="increment lt"
-                    on:click={() => {
-                        $aStats.health -= 1;
-                    }}>&lt</span
-                >
-                <input
-                    type="text"
-                    class="health"
-                    name="attacker-health"
-                    bind:value={$aStats.health}
-                    on:change={checkHealth}
-                />
-                <span
-                    class="increment gt"
-                    on:click={() => {
-                        $aStats.health += 1;
-                    }}>&gt</span
-                >
-            </div>
-        </form>
-    </div>
-
-    <div class="unit-stats">
-        <div class="unit-image-container">
-            <StatsCardA />
+                <div class="inline">
+                    <label for="attacker-health">Health</label>
+                    <span
+                        class="increment lt"
+                        on:click={() => {
+                            $aStats.health -= 1;
+                        }}>-</span
+                    >
+                    <input
+                        type="text"
+                        class="health"
+                        name="attacker-health"
+                        bind:value={$aStats.health}
+                        on:change={checkHealth}
+                    />
+                    <span
+                        class="increment gt"
+                        on:click={() => {
+                            $aStats.health += 1;
+                        }}>+</span
+                    >
+                </div>
+            </form>
         </div>
+
+        <div class="unit-stats">
+            <div class="unit-image-container">
+                <StatsCardA />
+            </div>
+        </div>
+    </div>
+    <div class="display-stats">
+        <p>
+            🗡️ {$aStats.attack}{#if $aFields.boosted}(+0.5){/if}
+        </p>
+        <p>🛡️ {$aStats.defence}</p>
+        <p>
+            🐎 {$aStats.movement}{#if $aFields.boosted}(+1){/if}
+        </p>
+        <p>🏹 {$aStats.range}</p>
     </div>
 </div>
 
@@ -244,7 +256,7 @@
         border-radius: 1rem;
     }
 
-    .unit-card {
+    .toprow {
         display: flex;
         width: max-content;
     }
@@ -270,5 +282,11 @@
 
     .health {
         width: 1rem;
+    }
+    .display-stats {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
 </style>

@@ -14,16 +14,6 @@
         veteran={$aFields.veteran}
     />
     <span class="attacker-icon" style="background-image: url('{$aImg.icon}')" />
-    <div class="display-stats">
-        <p>
-            🗡️ {$aStats.attack}{#if $aFields.boosted}(+0.5){/if}
-        </p>
-        <p>🛡️ {$aStats.defence}</p>
-        <p>
-            🐎 {$aStats.movement}{#if $aFields.boosted}(+1){/if}
-        </p>
-        <p>🏹 {$aStats.range}</p>
-    </div>
 </div>
 
 <style>
@@ -39,13 +29,8 @@
         min-height: 10rem;
         min-width: 15rem;
         display: block;
-        background-size: auto;
+        background-size: 10rem;
         background-position: bottom center;
         background-repeat: no-repeat;
-    }
-    .display-stats {
-        text-align: center;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 </style>
