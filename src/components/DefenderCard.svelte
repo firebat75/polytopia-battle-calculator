@@ -275,7 +275,10 @@
     input {
         padding: 3px;
     }
-
+    .unit-card {
+        display: flex;
+        width: max-content;
+    }
     .unit-card div {
         display: inline-flex;
     }

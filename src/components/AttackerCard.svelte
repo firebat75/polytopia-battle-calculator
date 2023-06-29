@@ -220,6 +220,11 @@
         border-radius: 1rem;
     }
 
+    .unit-card {
+        display: flex;
+        width: max-content;
+    }
+
     label {
         padding: 5px;
     }
