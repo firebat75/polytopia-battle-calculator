@@ -239,9 +239,6 @@
 </div>
 
 <style>
-    .unit-card {
-        text-align: center;
-    }
     .increment {
         background-color: rgb(0, 116, 116);
         padding: 5px;
@@ -256,6 +253,7 @@
         background-color: rgba(0, 0, 0, 0.309);
         padding: 1rem;
         border-radius: 1rem;
+        text-align: center;
     }
 
     .toprow {
@@ -274,6 +272,7 @@
     .unit-card div {
         display: inline-flex;
         min-width: 12rem;
+        margin-bottom: 1rem;
     }
 
     #attacker-input-form {
