@@ -80,7 +80,10 @@
                     health={$aStats.health - td[1]}
                 />
             </div>
-            <img src={$aImg.icon} alt="attacker unit icon" />
+            <span
+                class="attacker-icon"
+                style="background-image: url('{$aImg.icon}')"
+            />
         </div>
         <div class="unit-card">
             <div class="hbar">
@@ -89,12 +92,32 @@
                     health={$dStats.health - td[0]}
                 />
             </div>
-            <img src={$dImg.icon} alt="attacker unit icon" />
+            <span
+                class="defender-icon"
+                style="background-image: url('{$dImg.icon}')"
+            />
         </div>
     </div>
 </Modal>
 
 <style>
+    .attacker-icon {
+        height: 200px;
+        width: 200px;
+        display: block;
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
+
+    .defender-icon {
+        height: 200px;
+        width: 200px;
+        display: block;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        transform: scaleX(-1);
+    }
+
     .main {
         margin: 10px;
         padding: 10px;
