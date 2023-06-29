@@ -187,6 +187,7 @@
                 <div class="field-div">
                     <label for="veteran">Veteran</label>
                     <input
+                        class="checkbox"
                         type="checkbox"
                         id="veteran"
                         name="veteran"
@@ -199,6 +200,7 @@
             <div class="field-div">
                 <label for="poisoned">Poisoned</label>
                 <input
+                    class="checkbox"
                     type="checkbox"
                     id="poisoned"
                     name="poisoned"
@@ -211,6 +213,7 @@
                 <p>Defence Bonus</p>
                 <div class="dbonus-radio">
                     <input
+                        class="radio"
                         type="radio"
                         name="option"
                         value="option1"
@@ -221,6 +224,7 @@
                     <label for="option1">None</label><br />
 
                     <input
+                        class="radio"
                         type="radio"
                         name="option"
                         value="option2"
@@ -230,6 +234,7 @@
                     <label for="option2">x1.5</label><br />
 
                     <input
+                        class="radio"
                         type="radio"
                         name="option"
                         value="option3"
@@ -242,6 +247,12 @@
 
             <div class="field-div">
                 <label for="attacker-health">Health</label>
+                <span
+                    class="increment lt"
+                    on:click={() => {
+                        $dStats.health -= 1;
+                    }}>&lt</span
+                >
                 <input
                     type="text"
                     class="health"
@@ -249,6 +260,12 @@
                     bind:value={$dStats.health}
                     on:change={checkHealth}
                 />
+                <span
+                    class="increment gt"
+                    on:click={() => {
+                        $dStats.health += 1;
+                    }}>&gt</span
+                >
             </div>
         </form>
     </div>
@@ -262,6 +279,14 @@
 </div>
 
 <style>
+    .increment {
+        background-color: rgb(0, 116, 116);
+        padding: 5px;
+        cursor: pointer;
+    }
+    .increment:hover {
+        background-color: rgb(0, 171, 171);
+    }
     .unit-card {
         background-color: rgba(0, 0, 0, 0.309);
         padding: 1rem;
@@ -292,7 +317,8 @@
         align-items: center;
     }
 
-    .unit-stats {
+    #attacker-input-div {
+        min-width: 12rem;
     }
 
     .health {

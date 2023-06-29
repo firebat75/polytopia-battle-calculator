@@ -173,6 +173,7 @@
                 <div class="inline">
                     <label for="veteran">Veteran</label>
                     <input
+                        class="checkbox"
                         type="checkbox"
                         id="veteran"
                         name="veteran"
@@ -186,6 +187,7 @@
                 <label for="boosted">Combat Boost</label>
                 <input
                     type="checkbox"
+                    class="checkbox"
                     id="boosted"
                     name="boosted"
                     bind:checked={$aFields.boosted}
@@ -195,6 +197,12 @@
 
             <div class="inline">
                 <label for="attacker-health">Health</label>
+                <span
+                    class="increment lt"
+                    on:click={() => {
+                        $aStats.health -= 1;
+                    }}>&lt</span
+                >
                 <input
                     type="text"
                     class="health"
@@ -202,6 +210,12 @@
                     bind:value={$aStats.health}
                     on:change={checkHealth}
                 />
+                <span
+                    class="increment gt"
+                    on:click={() => {
+                        $aStats.health += 1;
+                    }}>&gt</span
+                >
             </div>
         </form>
     </div>
@@ -214,6 +228,16 @@
 </div>
 
 <style>
+    .increment {
+        background-color: rgb(0, 116, 116);
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    .increment:hover {
+        background-color: rgb(0, 171, 171);
+    }
+
     .unit-card {
         background-color: rgba(0, 0, 0, 0.309);
         padding: 1rem;
@@ -235,6 +259,7 @@
 
     .unit-card div {
         display: inline-flex;
+        min-width: 12rem;
     }
 
     #attacker-input-form {

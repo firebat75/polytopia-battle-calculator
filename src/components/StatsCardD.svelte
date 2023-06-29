@@ -35,11 +35,11 @@
     }
 
     .defender-icon {
-        height: 200px;
-        width: 200px;
+        min-height: 10rem;
+        min-width: 15rem;
         display: block;
-        background-size: contain;
-        background-position: bottom;
+        background-size: auto;
+        background-position: bottom center;
         background-repeat: no-repeat;
     }
 
