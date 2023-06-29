@@ -121,7 +121,7 @@
     .calc-button:hover {
         background-color: white;
         color: black;
-        transform: scale(1.05);
+        transform: scale(1.04);
     }
 
     .attacker-icon {
@@ -141,12 +141,6 @@
         background-position: bottom;
         background-repeat: no-repeat;
         transform: scaleX(-1);
-    }
-
-    .main {
-        margin: 10px;
-        padding: 10px;
-        border: solid green 2px;
     }
 
     .unit-ui {

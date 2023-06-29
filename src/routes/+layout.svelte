@@ -3,11 +3,16 @@
 </script>
 
 <header>
-    <div>
+    <div class="gate-container">
         <img class="gate" src={gate} alt="yaddak gate of power" />
     </div>
     <div>
-        <h1 class="title">Polytopia Battle Calculator</h1>
+        <div class="polytopia">
+            <hr class="line" />
+            <h2>POLYTOPIA</h2>
+            <hr class="line" />
+        </div>
+        <h1 class="title">BATTLE CALCULATOR</h1>
     </div>
 </header>
 
@@ -21,22 +26,51 @@
 </footer>
 
 <style>
+    .line {
+        border: 0;
+        width: 100%;
+        border-top: 1.5px solid white;
+    }
+
     header {
-        display: flex;
+        display: grid;
         justify-content: center;
     }
 
-    .title {
-        margin: 1rem;
-        font-weight: 300;
-        font-size: xx-large;
+    .polytopia {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
+    .polytopia h2 {
+        margin: 0;
+        margin-left: 0.5rem;
+        margin-right: 0.4rem;
+        font-weight: 300;
+        font-size: 2.2rem;
+        position: relative;
+        bottom: -5px;
+    }
+
+    .title {
+        margin: 0rem;
+        font-weight: 300;
+        font-size: 3rem;
+        margin-top: 0.4rem;
+    }
+
     header div {
         display: inline-block;
     }
 
+    .gate-container {
+        display: grid;
+    }
+
     .gate {
-        height: 4rem;
+        justify-self: center;
+        height: 6rem;
     }
 
     footer p {
