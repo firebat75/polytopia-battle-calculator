@@ -1,6 +1,7 @@
 <script>
     export let maxHealth;
     export let health;
+    export let veteran;
 </script>
 
 <div class="hbody">
@@ -9,7 +10,9 @@
             class="health"
             style="width: {Math.floor((100 / maxHealth) * health)}%"
         >
-            <p class="health-fraction">❤️{health}/{maxHealth}</p>
+            <p class="health-fraction">
+                ❤️{health}/{maxHealth}{#if veteran}(+5){/if}
+            </p>
         </div>
     </div>
 </div>

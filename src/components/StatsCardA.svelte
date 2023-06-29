@@ -8,12 +8,20 @@
         {$aFields.unit}
         {#if $aFields.naval}({$aFields.carrying}){/if}
     </h3>
-    <Healthbar maxHealth={$aStats.maxHealth} health={$aStats.health} />
+    <Healthbar
+        maxHealth={$aStats.maxHealth}
+        health={$aStats.health}
+        veteran={$aFields.veteran}
+    />
     <img class="unit-img" src={$aImg.icon} alt="attacker-img" />
     <div class="display-stats">
-        <p>🗡️ {$aStats.attack}</p>
+        <p>
+            🗡️ {$aStats.attack}{#if $aFields.boosted}(+0.5){/if}
+        </p>
         <p>🛡️ {$aStats.defence}</p>
-        <p>🐎 {$aStats.movement}</p>
+        <p>
+            🐎 {$aStats.movement}{#if $aFields.boosted}(+1){/if}
+        </p>
         <p>🏹 {$aStats.range}</p>
     </div>
 </div>
