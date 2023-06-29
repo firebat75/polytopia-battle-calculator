@@ -13,7 +13,7 @@
         health={$dStats.health}
         veteran={$dFields.veteran}
     />
-    <img class="unit-img" src={$dImg.icon} alt="attacker-img" />
+    <span class="defender-icon" style="background-image: url('{$dImg.icon}')" />
     <div class="display-stats">
         <p>🗡️ {$dStats.attack}</p>
         <p>
@@ -34,8 +34,13 @@
         margin: 0;
     }
 
-    .unit-img {
-        outline: 4px dotted black;
+    .defender-icon {
+        height: 200px;
+        width: 200px;
+        display: block;
+        background-size: contain;
+        background-position: bottom;
+        background-repeat: no-repeat;
     }
 
     .display-stats {

@@ -13,7 +13,7 @@
         health={$aStats.health}
         veteran={$aFields.veteran}
     />
-    <img class="unit-img" src={$aImg.icon} alt="attacker-img" />
+    <span class="attacker-icon" style="background-image: url('{$aImg.icon}')" />
     <div class="display-stats">
         <p>
             🗡️ {$aStats.attack}{#if $aFields.boosted}(+0.5){/if}
@@ -35,11 +35,14 @@
         text-align: center;
         margin: 0;
     }
-
-    .unit-img {
-        outline: 4px dotted black;
+    .attacker-icon {
+        height: 200px;
+        width: 200px;
+        display: block;
+        background-size: contain;
+        background-position: bottom;
+        background-repeat: no-repeat;
     }
-
     .display-stats {
         text-align: center;
         display: grid;

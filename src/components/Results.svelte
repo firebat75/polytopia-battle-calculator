@@ -105,6 +105,7 @@
         height: 200px;
         width: 200px;
         display: block;
+        background-size: contain;
         background-position: bottom;
         background-repeat: no-repeat;
     }
@@ -113,6 +114,7 @@
         height: 200px;
         width: 200px;
         display: block;
+        background-size: contain;
         background-position: bottom;
         background-repeat: no-repeat;
         transform: scaleX(-1);
