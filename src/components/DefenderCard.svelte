@@ -316,7 +316,7 @@
     }
     .unit-card div {
         display: inline-flex;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
     .dbonus-radio {
         display: block !important;

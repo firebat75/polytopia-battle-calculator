@@ -272,7 +272,7 @@
     .unit-card div {
         display: inline-flex;
         min-width: 12rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     #attacker-input-form {
