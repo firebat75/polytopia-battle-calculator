@@ -227,18 +227,23 @@
         </div>
     </div>
     <div class="display-stats">
-        <p>
+        <p class="stat">
             🗡️ {$aStats.attack}{#if $aFields.boosted}(+0.5){/if}
         </p>
-        <p>🛡️ {$aStats.defence}</p>
-        <p>
+        <p class="stat">🛡️ {$aStats.defence}</p>
+        <p class="stat">
             🐎 {$aStats.movement}{#if $aFields.boosted}(+1){/if}
         </p>
-        <p>🏹 {$aStats.range}</p>
+        <p class="stat">🏹 {$aStats.range}</p>
     </div>
 </div>
 
 <style>
+    .stat {
+        background-color: black;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+    }
     .increment {
         background-color: rgb(0, 116, 116);
         padding: 5px;
