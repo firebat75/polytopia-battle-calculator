@@ -300,7 +300,6 @@
         padding: 1rem;
         border-radius: 1rem;
         text-align: center;
-        width: 30rem;
         align-items: center;
     }
     .toprow {
@@ -309,12 +308,16 @@
         justify-content: center;
     }
     #defender-input-div {
-        width: 15rem;
+        min-height: 18rem;
+        min-width: 14rem;
         margin-right: 0.5rem;
         padding: 0.5rem;
         margin-left: 0.5rem;
         border-radius: 1rem;
         background-color: rgba(0, 0, 0, 0.309);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     #defender-input-form {
         display: flex;
@@ -378,6 +381,7 @@
     .health-div {
         justify-content: center;
         align-items: center;
+        border-bottom: none;
     }
     .health {
         width: 2rem;
