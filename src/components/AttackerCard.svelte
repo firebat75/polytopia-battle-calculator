@@ -267,10 +267,9 @@
     }
     .field-div {
         padding: 0.5rem 1rem;
-        margin-left: 0.5rem;
-        border-radius: 0.5rem;
         display: flex;
         justify-content: center;
+        border-bottom: 1px solid white;
     }
     .unitdd {
         align-items: center;
