@@ -258,7 +258,7 @@
                         class="increment lt"
                         on:click={() => {
                             $dStats.health -= 1;
-                        }}>-</span
+                        }}><p>-</p></span
                     >
                     <input
                         type="text"
@@ -271,7 +271,7 @@
                         class="increment gt"
                         on:click={() => {
                             $dStats.health += 1;
-                        }}>+</span
+                        }}><p>+</p></span
                     >
                 </div>
             </form>
@@ -338,11 +338,17 @@
     .increment {
         border-radius: 0.2rem;
         background-color: rgb(0, 116, 116);
-        padding: 5px;
         cursor: pointer;
     }
     .increment:hover {
         background-color: rgb(0, 171, 171);
+    }
+
+    .increment p {
+        margin: 0;
+        width: 1.5rem;
+        height: 1rem;
+        user-select: none;
     }
     .unit-card {
         background-color: rgba(0, 0, 0, 0.309);
@@ -381,6 +387,7 @@
         height: 1.5rem;
         border-radius: 0.5rem;
         border: none;
+        margin: 0 2px;
     }
 
     .unit-stats {
