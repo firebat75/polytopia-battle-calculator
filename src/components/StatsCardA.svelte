@@ -23,6 +23,8 @@
     h3 {
         text-align: center;
         margin: 0;
+        margin-top: 0.5rem;
+        margin-bottom: 0.2rem;
         text-shadow: 1px 1px 0px #000000;
     }
     .attacker-icon {

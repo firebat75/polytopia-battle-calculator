@@ -375,7 +375,7 @@
 
     .unit-stats {
         margin-left: 0.5rem;
-        border: 1px solid white;
+        /* border: 1px solid white; */
         border-radius: 1rem;
         background-color: rgba(0, 0, 0, 0.309);
     }
