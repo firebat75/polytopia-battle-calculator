@@ -295,67 +295,12 @@
 </div>
 
 <style>
-    .unitdd {
-        align-items: center;
-        display: flex;
-    }
-    .field-div {
-        padding: 0.5rem 1rem;
-        margin-left: 0.5rem;
-        /* border: 1px solid white; */
-        border-radius: 0.5rem;
-        display: flex;
-        justify-content: center;
-    }
-
-    .field-div p {
-        margin: 0;
-        margin-right: 0.5rem;
-    }
-
-    .dradio {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .radio-selection {
-        margin: 5px 0px;
-    }
-
-    .radio-selection .radio {
-        margin: 0;
-        padding: 0;
-        float: left;
-    }
-
-    .radio-selection label {
-        margin: 0;
-        padding: 0;
-        float: left;
-    }
-
-    .increment {
-        border-radius: 0.2rem;
-        background-color: rgb(0, 116, 116);
-        cursor: pointer;
-    }
-    .increment:hover {
-        background-color: rgb(0, 171, 171);
-    }
-
-    .increment p {
-        margin: 0;
-        width: 1.5rem;
-        height: 1rem;
-        user-select: none;
-    }
     .unit-card {
         background-color: rgba(0, 0, 0, 0.309);
         padding: 1rem;
         border-radius: 1rem;
         text-align: center;
-        width: 40rem;
+        width: 30rem;
         align-items: center;
     }
     .toprow {
@@ -363,15 +308,6 @@
         align-items: center;
         justify-content: center;
     }
-    .unit-card div {
-    }
-
-    #defender-input-form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
     #defender-input-div {
         width: 15rem;
         margin-right: 0.5rem;
@@ -380,7 +316,69 @@
         border-radius: 1rem;
         background-color: rgba(0, 0, 0, 0.309);
     }
-
+    #defender-input-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .field-div {
+        padding: 0.5rem 1rem;
+        margin-left: 0.5rem;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: center;
+    }
+    .unitdd {
+        align-items: center;
+        display: flex;
+    }
+    .field-div p {
+        margin: 0;
+        margin-right: 0.5rem;
+    }
+    .dradio {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .dbonus-radio {
+        align-items: center;
+        vertical-align: middle;
+        margin-left: 0.3rem;
+    }
+    .radio-selection {
+        margin: 5px 0px;
+        width: 3.5rem;
+    }
+    .radio-selection label {
+        margin: 0;
+        margin-left: 3px;
+        padding: 0;
+        float: left;
+    }
+    .radio-selection .radio {
+        margin: 0;
+        padding: 0;
+        float: left;
+    }
+    .increment {
+        border-radius: 0.2rem;
+        background-color: rgb(0, 116, 116);
+        cursor: pointer;
+    }
+    .increment:hover {
+        background-color: rgb(0, 171, 171);
+    }
+    .increment p {
+        margin: 0;
+        width: 1.5rem;
+        height: 1rem;
+        user-select: none;
+    }
+    .health-div {
+        justify-content: center;
+        align-items: center;
+    }
     .health {
         width: 2rem;
         text-align: center;
@@ -389,7 +387,13 @@
         border: none;
         margin: 0 2px;
     }
-
+    label {
+        margin-right: 0.5rem;
+    }
+    .checkbox {
+        margin: 0;
+        margin-left: 0.5rem;
+    }
     .unit-stats {
         margin-left: 0.5rem;
         border-radius: 1rem;
@@ -401,24 +405,5 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-    }
-
-    label {
-        margin-right: 0.5rem;
-    }
-
-    .checkbox {
-        margin: 0;
-        margin-left: 0.5rem;
-    }
-    .dbonus-radio {
-        align-items: center;
-        vertical-align: middle;
-        margin-left: 0.5rem;
-    }
-
-    .health-div {
-        justify-content: center;
-        align-items: center;
     }
 </style>

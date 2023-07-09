@@ -59,8 +59,7 @@
         margin: 0;
         height: 2em;
         outline: solid rgba(0, 0, 0, 0.4) 1px;
-        background: rgb(238, 174, 202);
-        background: linear-gradient(to top, #0cc337 0%, #49e259 100%);
+        background: linear-gradient(to top, #045216 0%, #0caa1b 100%);
     }
 
     .tick-b {

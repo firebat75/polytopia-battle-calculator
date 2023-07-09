@@ -157,20 +157,20 @@
     <div class="toprow">
         <div id="attacker-input-div">
             <form id="attacker-input-form">
-                <div class="inline">
+                <div class="field-div unitdd">
                     <label for="attacker-unit-choice">Unit</label>
                     <UnitSelectDropdown on:selection={selection} />
                 </div>
 
                 {#if $aFields.naval}
-                    <div class="inline">
+                    <div class="field-div unitdd">
                         <label for="attacker-naval-carry">Carrying</label>
                         <UnitSelectDropdown on:selection={selectionNaval} />
                     </div>
                 {/if}
 
                 {#if vetAble}
-                    <div class="inline">
+                    <div class="field-div">
                         <label for="veteran">Veteran</label>
                         <input
                             class="checkbox"
@@ -183,7 +183,7 @@
                     </div>
                 {/if}
 
-                <div class="inline">
+                <div class="field-div">
                     <label for="boosted">Combat Boost</label>
                     <input
                         type="checkbox"
@@ -195,13 +195,13 @@
                     />
                 </div>
 
-                <div class="inline">
+                <div class="field-div health-div">
                     <label for="attacker-health">Health</label>
                     <span
                         class="increment lt"
                         on:click={() => {
                             $aStats.health -= 1;
-                        }}>-</span
+                        }}><p>-</p></span
                     >
                     <input
                         type="text"
@@ -214,7 +214,7 @@
                         class="increment gt"
                         on:click={() => {
                             $aStats.health += 1;
-                        }}>+</span
+                        }}><p>+</p></span
                     >
                 </div>
             </form>
@@ -239,59 +239,86 @@
 </div>
 
 <style>
-    .stat {
-        /* background-color: black;
-        padding: 0.5rem;
-        border-radius: 0.5rem; */
-    }
-    .increment {
-        background-color: rgb(0, 116, 116);
-        padding: 5px;
-        cursor: pointer;
-    }
-
-    .increment:hover {
-        background-color: rgb(0, 171, 171);
-    }
-
     .unit-card {
         background-color: rgba(0, 0, 0, 0.309);
         padding: 1rem;
         border-radius: 1rem;
         text-align: center;
+        width: 30rem;
+        align-items: center;
     }
-
     .toprow {
         display: flex;
-        width: max-content;
+        align-items: center;
+        justify-content: center;
     }
-
-    label {
-        padding: 5px;
+    #attacker-input-div {
+        width: 15rem;
+        margin-right: 0.5rem;
+        padding: 0.5rem;
+        margin-left: 0.5rem;
+        border-radius: 1rem;
+        background-color: rgba(0, 0, 0, 0.309);
     }
-
-    input {
-        padding: 3px;
-    }
-
-    .unit-card div {
-        /* display: inline-flex; */
-        margin-bottom: 0.5rem;
-    }
-
     #attacker-input-form {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-
-    #attacker-input-div {
-        min-width: 12rem;
+    .field-div {
+        padding: 0.5rem 1rem;
+        margin-left: 0.5rem;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: center;
     }
-
+    .unitdd {
+        align-items: center;
+        display: flex;
+    }
+    .field-div p {
+        margin: 0;
+        margin-right: 0.5rem;
+    }
+    .increment {
+        border-radius: 0.2rem;
+        background-color: rgb(0, 116, 116);
+        cursor: pointer;
+    }
+    .increment:hover {
+        background-color: rgb(0, 171, 171);
+    }
+    .increment p {
+        margin: 0;
+        width: 1.5rem;
+        height: 1rem;
+        user-select: none;
+    }
+    .health-div {
+        justify-content: center;
+        align-items: center;
+    }
     .health {
-        width: 1rem;
+        width: 2rem;
+        text-align: center;
+        height: 1.5rem;
+        border-radius: 0.5rem;
+        border: none;
+        margin: 0 2px;
     }
+    label {
+        margin-right: 0.5rem;
+    }
+    .checkbox {
+        margin: 0;
+        margin-left: 0.5rem;
+    }
+    .unit-stats {
+        margin-left: 0.5rem;
+        border-radius: 1rem;
+        background-color: rgba(0, 0, 0, 0.309);
+    }
+
     .display-stats {
         width: 100%;
         display: flex;
