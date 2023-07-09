@@ -169,16 +169,16 @@
 <div class="unit-card">
     <h2>Defender</h2>
     <div class="toprow">
-        <div id="attacker-input-div">
-            <form id="attacker-input-form">
+        <div id="defender-input-div">
+            <form id="defender-input-form">
                 <div class="field-div">
-                    <label for="attacker-unit-choice">Unit</label>
+                    <label for="defender-unit-choice">Unit</label>
                     <UnitSelectDropdown on:selection={selection} />
                 </div>
 
                 {#if $dFields.naval}
                     <div class="field-div">
-                        <label for="attacker-naval-carry">Carrying</label>
+                        <label for="defender-naval-carry">Carrying</label>
                         <UnitSelectDropdown on:selection={selectionNaval} />
                     </div>
                 {/if}
@@ -209,44 +209,50 @@
                     />
                 </div>
 
-                <div class="field-div">
+                <div class="field-div dradio">
                     <p>Defence Bonus</p>
                     <div class="dbonus-radio">
-                        <input
-                            class="radio"
-                            type="radio"
-                            name="option"
-                            value="option1"
-                            id="option1"
-                            on:click={dBonus0}
-                            checked
-                        />
-                        <label for="option1">None</label><br />
+                        <div class="radio-selection">
+                            <input
+                                class="radio"
+                                type="radio"
+                                name="option"
+                                value="option1"
+                                id="option1"
+                                on:click={dBonus0}
+                                checked
+                            />
+                            <label for="option1">None</label><br />
+                        </div>
 
-                        <input
-                            class="radio"
-                            type="radio"
-                            name="option"
-                            value="option2"
-                            id="option2"
-                            on:click={dBonus1}
-                        />
-                        <label for="option2">x1.5</label><br />
+                        <div class="radio-selection">
+                            <input
+                                class="radio"
+                                type="radio"
+                                name="option"
+                                value="option2"
+                                id="option2"
+                                on:click={dBonus1}
+                            />
+                            <label for="option2">x1.5</label><br />
+                        </div>
 
-                        <input
-                            class="radio"
-                            type="radio"
-                            name="option"
-                            value="option3"
-                            id="option3"
-                            on:click={dBonus2}
-                        />
-                        <label for="option3">x4</label><br />
+                        <div class="radio-selection">
+                            <input
+                                class="radio"
+                                type="radio"
+                                name="option"
+                                value="option3"
+                                id="option3"
+                                on:click={dBonus2}
+                            />
+                            <label for="option3">x4</label><br />
+                        </div>
                     </div>
                 </div>
 
                 <div class="field-div">
-                    <label for="attacker-health">Health</label>
+                    <label for="defender-health">Health</label>
                     <span
                         class="increment lt"
                         on:click={() => {
@@ -256,7 +262,7 @@
                     <input
                         type="text"
                         class="health"
-                        name="attacker-health"
+                        name="defender-health"
                         bind:value={$dStats.health}
                         on:change={checkHealth}
                     />
@@ -288,6 +294,30 @@
 </div>
 
 <style>
+    .field-div {
+        border: 1px solid white;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .dradio {
+        display: flex;
+    }
+    .radio-selection .radio {
+        margin: 0;
+        padding: 0;
+        float: left;
+    }
+
+    .radio-selection label {
+        margin: 0;
+        padding: 0;
+        float: left;
+    }
+    .dbonus-radio {
+        align-items: center;
+    }
+
     .increment {
         background-color: rgb(0, 116, 116);
         padding: 5px;
@@ -315,20 +345,17 @@
         width: max-content;
     }
     .unit-card div {
-        display: inline-flex;
+        /* display: inline-flex; */
         margin-bottom: 0.5rem;
     }
-    .dbonus-radio {
-        display: block !important;
-    }
 
-    #attacker-input-form {
+    #defender-input-form {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    #attacker-input-div {
+    #defender-input-div {
         min-width: 12rem;
     }
 

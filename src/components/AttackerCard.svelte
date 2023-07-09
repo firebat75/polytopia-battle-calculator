@@ -240,9 +240,9 @@
 
 <style>
     .stat {
-        background-color: black;
+        /* background-color: black;
         padding: 0.5rem;
-        border-radius: 0.5rem;
+        border-radius: 0.5rem; */
     }
     .increment {
         background-color: rgb(0, 116, 116);
@@ -275,8 +275,7 @@
     }
 
     .unit-card div {
-        display: inline-flex;
-        min-width: 12rem;
+        /* display: inline-flex; */
         margin-bottom: 0.5rem;
     }
 
@@ -284,6 +283,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    #attacker-input-div {
+        min-width: 12rem;
     }
 
     .health {
