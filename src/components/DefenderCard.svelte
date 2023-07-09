@@ -171,13 +171,13 @@
     <div class="toprow">
         <div id="defender-input-div">
             <form id="defender-input-form">
-                <div class="field-div">
+                <div class="field-div unitdd">
                     <label for="defender-unit-choice">Unit</label>
                     <UnitSelectDropdown on:selection={selection} />
                 </div>
 
                 {#if $dFields.naval}
-                    <div class="field-div">
+                    <div class="field-div unitdd">
                         <label for="defender-naval-carry">Carrying</label>
                         <UnitSelectDropdown on:selection={selectionNaval} />
                     </div>
@@ -294,10 +294,15 @@
 </div>
 
 <style>
+    .unitdd {
+        align-items: center;
+        display: flex;
+    }
     .field-div {
+        padding: 0.5rem;
+        margin-left: 0.5rem;
         border: 1px solid white;
         border-radius: 0.5rem;
-        padding: 0.5rem;
     }
 
     .dradio {
@@ -319,6 +324,7 @@
     }
 
     .increment {
+        border-radius: 0.2rem;
         background-color: rgb(0, 116, 116);
         padding: 5px;
         cursor: pointer;
@@ -331,21 +337,15 @@
         padding: 1rem;
         border-radius: 1rem;
         text-align: center;
-    }
-
-    label {
-        padding: 5px;
-    }
-
-    input {
-        padding: 3px;
+        width: 40rem;
+        align-items: center;
     }
     .toprow {
         display: flex;
-        width: max-content;
+        align-items: center;
+        justify-content: center;
     }
     .unit-card div {
-        /* display: inline-flex; */
         margin-bottom: 0.5rem;
     }
 
@@ -356,11 +356,28 @@
     }
 
     #defender-input-div {
-        min-width: 12rem;
+        width: 15rem;
+        margin-right: 0.5rem;
+        padding: 0.5rem;
+        margin-left: 0.5rem;
+        border: 1px solid white;
+        border-radius: 1rem;
+        background-color: rgba(0, 0, 0, 0.309);
     }
 
     .health {
-        width: 1rem;
+        width: 2rem;
+        text-align: center;
+        height: 1.5rem;
+        border-radius: 0.5rem;
+        border: none;
+    }
+
+    .unit-stats {
+        margin-left: 0.5rem;
+        border: 1px solid white;
+        border-radius: 1rem;
+        background-color: rgba(0, 0, 0, 0.309);
     }
 
     .display-stats {

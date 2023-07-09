@@ -7,14 +7,14 @@
 
     let units = [];
     for (const unit in data) {
-        units.push(unit)
+        units.push(unit);
     }
     let selected = "warrior";
 
     function update() {
-		dispatch('selection', {
-			text: selected
-		});
+        dispatch("selection", {
+            text: selected,
+        });
     }
 </script>
 
@@ -25,3 +25,11 @@
         {/each}
     </select>
 </div>
+
+<style>
+    select {
+        height: 1.5rem;
+        width: 7rem;
+        border-radius: 0.3rem;
+    }
+</style>
