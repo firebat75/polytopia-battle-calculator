@@ -246,6 +246,9 @@
         text-align: center;
         align-items: center;
     }
+    h2 {
+        margin: 0.5rem 0;
+    }
     .toprow {
         display: flex;
         align-items: center;
