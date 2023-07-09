@@ -199,6 +199,7 @@
 
                 <div class="field-div">
                     <label for="poisoned">Poisoned</label>
+
                     <input
                         class="checkbox"
                         type="checkbox"
@@ -251,7 +252,7 @@
                     </div>
                 </div>
 
-                <div class="field-div">
+                <div class="field-div health-div">
                     <label for="defender-health">Health</label>
                     <span
                         class="increment lt"
@@ -299,15 +300,29 @@
         display: flex;
     }
     .field-div {
-        padding: 0.5rem;
+        padding: 0.5rem 1rem;
         margin-left: 0.5rem;
-        border: 1px solid white;
+        /* border: 1px solid white; */
         border-radius: 0.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .field-div p {
+        margin: 0;
+        margin-right: 0.5rem;
     }
 
     .dradio {
         display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
+    .radio-selection {
+        margin: 5px 0px;
+    }
+
     .radio-selection .radio {
         margin: 0;
         padding: 0;
@@ -318,9 +333,6 @@
         margin: 0;
         padding: 0;
         float: left;
-    }
-    .dbonus-radio {
-        align-items: center;
     }
 
     .increment {
@@ -346,7 +358,6 @@
         justify-content: center;
     }
     .unit-card div {
-        margin-bottom: 0.5rem;
     }
 
     #defender-input-form {
@@ -360,7 +371,6 @@
         margin-right: 0.5rem;
         padding: 0.5rem;
         margin-left: 0.5rem;
-        border: 1px solid white;
         border-radius: 1rem;
         background-color: rgba(0, 0, 0, 0.309);
     }
@@ -375,7 +385,6 @@
 
     .unit-stats {
         margin-left: 0.5rem;
-        /* border: 1px solid white; */
         border-radius: 1rem;
         background-color: rgba(0, 0, 0, 0.309);
     }
@@ -385,5 +394,24 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+    }
+
+    label {
+        margin-right: 0.5rem;
+    }
+
+    .checkbox {
+        margin: 0;
+        margin-left: 0.5rem;
+    }
+    .dbonus-radio {
+        align-items: center;
+        vertical-align: middle;
+        margin-left: 0.5rem;
+    }
+
+    .health-div {
+        justify-content: center;
+        align-items: center;
     }
 </style>
