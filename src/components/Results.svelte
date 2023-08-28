@@ -49,12 +49,14 @@
 
     let td = [0, 0];
     function calculate() {
+        td = [0, 0];
         showModal = true;
         td[0] = calcAttackResult();
 
         if ($dStats.health - td[0] > 0) {
             td[1] = calcDefenceResult();
         }
+        console.log(td);
     }
 </script>
 
@@ -63,14 +65,17 @@
 </div>
 
 <Modal bind:showModal>
-    <h2 slot="header">Combat Results</h2>
+    <h2 slot="header" class="header">Combat Results</h2>
 
     <ul>
-        <li>defender takes {td[0]} of damage</li>
+        <li>attacker deals {td[0]} damage to defender</li>
         {#if $dStats.health - td[0] > 0}
-            <li>attacker takes {td[1]} of health in retaliation</li>
+            <li>defender deals {td[1]} damage in retaliation</li>
         {:else}
             <li>defender dies</li>
+        {/if}
+        {#if $aStats.health - td[1] < 1}
+            <li>attacker dies</li>
         {/if}
     </ul>
 
@@ -82,10 +87,17 @@
                     health={Math.max($aStats.health - td[1], 0)}
                 />
             </div>
-            <span
-                class="attacker-icon"
-                style="background-image: url('{$aImg.icon}')"
-            />
+            {#if $aStats.health - td[1] > 0}
+                <span
+                    class="attacker-icon"
+                    style="background-image: url('{$aImg.icon}')"
+                />
+            {:else}
+                <span
+                    class="attacker-icon attacker-icon-dead"
+                    style="background-image: url('{$aImg.icon}')"
+                />
+            {/if}
         </div>
         <div class="unit-card">
             <div class="hbar">
@@ -94,10 +106,17 @@
                     health={Math.max($dStats.health - td[0], 0)}
                 />
             </div>
-            <span
-                class="defender-icon"
-                style="background-image: url('{$dImg.icon}')"
-            />
+            {#if $dStats.health - td[0] > 0}
+                <span
+                    class="defender-icon"
+                    style="background-image: url('{$dImg.icon}')"
+                />
+            {:else}
+                <span
+                    class="defender-icon defender-icon-dead"
+                    style="background-image: url('{$dImg.icon}')"
+                />
+            {/if}
         </div>
     </div>
 </Modal>
@@ -107,6 +126,10 @@
     .btn-container {
         display: flex;
         justify-content: center;
+    }
+
+    .header {
+        text-align: center;
     }
 
     .calc-button {
@@ -148,6 +171,16 @@
         background-position: bottom;
         background-repeat: no-repeat;
         transform: scaleX(-1);
+    }
+
+    .defender-icon-dead {
+        transform: scaleX(-1) rotate(270deg) translate(-30px, -40px);
+        filter: grayscale(70%);
+    }
+
+    .attacker-icon-dead {
+        transform: rotate(270deg) translate(-30px, -40px);
+        filter: grayscale(70%);
     }
 
     .unit-ui {
