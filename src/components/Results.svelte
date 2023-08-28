@@ -51,7 +51,10 @@
     function calculate() {
         showModal = true;
         td[0] = calcAttackResult();
-        td[1] = calcDefenceResult();
+
+        if ($dStats.health - td[0] > 0) {
+            td[1] = calcDefenceResult();
+        }
     }
 </script>
 
@@ -64,7 +67,11 @@
 
     <ul>
         <li>defender takes {td[0]} of damage</li>
-        <li>attacker takes {td[1]} of health in retaliation</li>
+        {#if $dStats.health - td[0] > 0}
+            <li>attacker takes {td[1]} of health in retaliation</li>
+        {:else}
+            <li>defender dies</li>
+        {/if}
     </ul>
 
     <div class="unit-ui">
