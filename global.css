@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    color: #fff;
+    background: rgb(244, 214, 126);
+    background: linear-gradient(0deg, rgba(244, 214, 126, 1) 0%, rgba(245, 106, 171, 1) 100%);
+    min-height: 100vh;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: linear-gradient(0deg, rgba(244, 214, 126, 1) 0%, rgba(245, 106, 171, 1) 100%);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.437);
+    border-radius: 10px;
+    ;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffffe2;
+    box-shadow: 20px 0px 20px 20px #0ff;
+}
