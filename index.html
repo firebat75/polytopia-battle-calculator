@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="/polytopia-battle-calculator/favicon.png" />
+	<link rel='stylesheet' href='/polytopia-battle-calculator/global.css'>
+	<meta name="viewport" content="width=device-width" />
+	
+		<link rel="modulepreload" href="/polytopia-battle-calculator/_app/immutable/entry/start.4c222187.js">
+		<link rel="modulepreload" href="/polytopia-battle-calculator/_app/immutable/chunks/index.f5bd1085.js">
+		<link rel="modulepreload" href="/polytopia-battle-calculator/_app/immutable/chunks/singletons.d9f06b65.js">
+		<link rel="modulepreload" href="/polytopia-battle-calculator/_app/immutable/chunks/index.3a949d87.js">
+		<link rel="modulepreload" href="/polytopia-battle-calculator/_app/immutable/entry/app.891cdc7e.js">
+</head>
+
+<body data-sveltekit-preload-data="hover">
+	<div style="display: contents">
+			<script>
+				{
+					__sveltekit_pb28gl = {
+						assets: "/polytopia-battle-calculator",
+						base: "/polytopia-battle-calculator",
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("/polytopia-battle-calculator/_app/immutable/entry/start.4c222187.js"),
+						import("/polytopia-battle-calculator/_app/immutable/entry/app.891cdc7e.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
+</body>
+
+</html>
