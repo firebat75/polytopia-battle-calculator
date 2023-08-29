@@ -10,6 +10,9 @@ export default {
 			fallback: undefined,
 			precompress: false,
 			strict: false
-		})
+		}),
+		paths: {
+			base: process.env.NODE_ENV === 'production' ? '/polytopia-battle-calculator' : '',
+		}
 	}
 };
