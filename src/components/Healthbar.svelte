@@ -97,5 +97,6 @@
         width: 100%;
         outline: 3px solid black;
         height: 2em;
+        background-color: black;
     }
 </style>
