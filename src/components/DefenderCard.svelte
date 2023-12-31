@@ -283,18 +283,58 @@
             </div>
             <div />
             <div class="display-stats">
-                <p>🗡️ {$dStats.attack}</p>
-                <p>
-                    🛡️ {$dStats.defence}{#if $dFields.poisoned}(-30%){/if}
-                </p>
-                <p>🐎 {$dStats.movement}</p>
-                <p>🏹 {$dStats.range}</p>
+                <div class="tooltip">
+                    <span class="tooltiptext">Attack Force</span>
+                    <p>🗡️ {$dStats.attack}</p>
+                </div>
+                <div class="tooltip">
+                    <span class="tooltiptext">Defense Force</span>
+                    <p>
+                        🛡️ {$dStats.defence}{#if $dFields.poisoned}(-30%){/if}
+                    </p>
+                </div>
+                <div class="tooltip">
+                    <span class="tooltiptext">Movement Range</span>
+                    <p>🐎 {$dStats.movement}</p>
+                </div>
+                <div class="tooltip">
+                    <span class="tooltiptext">Attack Range</span>
+                    <p>🏹 {$dStats.range}</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <style>
+    /* Tooltip container */
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        background-color: rgba(0, 0, 0, 0.685);
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+
+        /* Position the tooltip text - see examples below! */
+        position: absolute;
+        z-index: 1;
+        width: 120px;
+        top: 100%;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
     .unit-card {
         background-color: rgba(0, 0, 0, 0.309);
         padding: 1rem;
