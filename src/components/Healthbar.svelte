@@ -32,9 +32,21 @@
                 {/each}
                 <!-- gray health tick for missing health -->
                 {#each Array(Math.max(maxHealth - health, 0)) as _, i}
-                    <p class="gray-tick" style="width: {100 / maxHealth}%">
-                        &nbsp;
-                    </p>
+                    <!-- larger border every 5 health ticks -->
+                    {#if (i + 1 + health) % 5 == 0}
+                        <p
+                            class="gray-tick"
+                            style="width: {100 /
+                                maxHealth}%; border-right: 2px solid black"
+                        >
+                            &nbsp;
+                        </p>
+                        <!-- regular gray health tick -->
+                    {:else}
+                        <p class="gray-tick" style="width: {100 / maxHealth}%">
+                            &nbsp;
+                        </p>
+                    {/if}
                 {/each}
             </div>
         </div>
