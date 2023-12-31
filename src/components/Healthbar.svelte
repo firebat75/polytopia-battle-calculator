@@ -10,24 +10,29 @@
     </p>
     <div class="bar">
         <div class="health">
-            <div class="ticks">
+            <div class="health-ticks">
+                <!-- create health ticks to fill the health bar
+                green ticks for health, gray ticks for missing health -->
                 {#each Array(health) as _, i}
-                    {#if (i + 1) % 5 == 0 && i < maxHealth - 1}
+                    <!-- larger border every 5 health ticks -->
+                    {#if (i + 1) % 5 == 0}
                         <p
-                            class="tick-a"
+                            class="green-tick"
                             style="width: {100 /
                                 maxHealth}%; border-right: 2px solid black"
                         >
                             &nbsp;
                         </p>
+                        <!-- regular green health tick -->
                     {:else}
-                        <p class="tick-a" style="width: {100 / maxHealth}%">
+                        <p class="green-tick" style="width: {100 / maxHealth}%">
                             &nbsp;
                         </p>
                     {/if}
                 {/each}
+                <!-- gray health tick for missing health -->
                 {#each Array(Math.max(maxHealth - health, 0)) as _, i}
-                    <p class="tick-b" style="width: {100 / maxHealth}%">
+                    <p class="gray-tick" style="width: {100 / maxHealth}%">
                         &nbsp;
                     </p>
                 {/each}
@@ -50,11 +55,11 @@
 
         text-shadow: 1px 1px 0px #000000;
     }
-    .ticks {
+    .health-ticks {
         display: flex;
     }
 
-    .tick-a {
+    .green-tick {
         color: rgb(0, 255, 0);
         margin: 0;
         height: 2em;
@@ -62,7 +67,7 @@
         background: linear-gradient(to top, #045216 0%, #0caa1b 100%);
     }
 
-    .tick-b {
+    .gray-tick {
         color: rgb(177, 177, 177);
         margin: 0;
         height: 2em;
