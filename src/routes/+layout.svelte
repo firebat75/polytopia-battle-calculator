@@ -1,6 +1,5 @@
 <script>
     import gate from "$lib/gate.png";
-    export const prerender = true;
 </script>
 
 <svelte:head>
