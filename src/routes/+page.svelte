@@ -23,9 +23,20 @@
         min-height: 85vh;
     }
 
+    @media (min-width: 1200px) {
+        .units {
+            display: flex;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .units {
+            display: grid;
+        }
+    }
+
     .units {
         margin: 5px;
-        display: flex;
         justify-content: center;
     }
 
