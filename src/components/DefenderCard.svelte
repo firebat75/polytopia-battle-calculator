@@ -282,15 +282,15 @@
                 <StatsCardD />
             </div>
             <div />
+            <div class="display-stats">
+                <p>🗡️ {$dStats.attack}</p>
+                <p>
+                    🛡️ {$dStats.defence}{#if $dFields.poisoned}(-30%){/if}
+                </p>
+                <p>🐎 {$dStats.movement}</p>
+                <p>🏹 {$dStats.range}</p>
+            </div>
         </div>
-    </div>
-    <div class="display-stats">
-        <p>🗡️ {$dStats.attack}</p>
-        <p>
-            🛡️ {$dStats.defence}{#if $dFields.poisoned}(-30%){/if}
-        </p>
-        <p>🐎 {$dStats.movement}</p>
-        <p>🏹 {$dStats.range}</p>
     </div>
 </div>
 
@@ -301,6 +301,11 @@
         border-radius: 1rem;
         text-align: center;
         align-items: center;
+    }
+
+    .display-stats {
+        border-radius: 1rem;
+        background-color: rgba(0, 0, 0, 0.309);
     }
     h2 {
         margin: 0.5rem 0;
