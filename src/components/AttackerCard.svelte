@@ -224,17 +224,17 @@
             <div class="unit-image-container">
                 <StatsCardA />
             </div>
+            <div class="display-stats">
+                <p class="stat">
+                    🗡️ {$aStats.attack}{#if $aFields.boosted}(+0.5){/if}
+                </p>
+                <p class="stat">🛡️ {$aStats.defence}</p>
+                <p class="stat">
+                    🐎 {$aStats.movement}{#if $aFields.boosted}(+1){/if}
+                </p>
+                <p class="stat">🏹 {$aStats.range}</p>
+            </div>
         </div>
-    </div>
-    <div class="display-stats">
-        <p class="stat">
-            🗡️ {$aStats.attack}{#if $aFields.boosted}(+0.5){/if}
-        </p>
-        <p class="stat">🛡️ {$aStats.defence}</p>
-        <p class="stat">
-            🐎 {$aStats.movement}{#if $aFields.boosted}(+1){/if}
-        </p>
-        <p class="stat">🏹 {$aStats.range}</p>
     </div>
 </div>
 
@@ -246,6 +246,12 @@
         text-align: center;
         align-items: center;
     }
+
+    .display-stats {
+        border-radius: 1rem;
+        background-color: rgba(0, 0, 0, 0.309);
+    }
+
     h2 {
         margin: 0.5rem 0;
     }
