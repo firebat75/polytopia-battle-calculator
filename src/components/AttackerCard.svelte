@@ -225,20 +225,60 @@
                 <StatsCardA />
             </div>
             <div class="display-stats">
-                <p class="stat">
-                    🗡️ {$aStats.attack}{#if $aFields.boosted}(+0.5){/if}
-                </p>
-                <p class="stat">🛡️ {$aStats.defence}</p>
-                <p class="stat">
-                    🐎 {$aStats.movement}{#if $aFields.boosted}(+1){/if}
-                </p>
-                <p class="stat">🏹 {$aStats.range}</p>
+                <div class="attack-stat">
+                    <div class="tooltip">
+                        <span class="tooltiptext">Attack Force</span>
+                        <p class="stat">
+                            🗡️ {$aStats.attack}{#if $aFields.boosted}(+0.5){/if}
+                        </p>
+                    </div>
+                </div>
+                <div class="tooltip">
+                    <span class="tooltiptext">Defense Force</span>
+                    <p class="stat">🛡️ {$aStats.defence}</p>
+                </div>
+                <div class="tooltip">
+                    <span class="tooltiptext">Movement Range</span>
+                    <p class="stat">
+                        🐎 {$aStats.movement}{#if $aFields.boosted}(+1){/if}
+                    </p>
+                </div>
+                <div class="tooltip">
+                    <span class="tooltiptext">Attack Range</span>
+                    <p class="stat">🏹 {$aStats.range}</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <style>
+    /* Tooltip container */
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: rgba(0, 0, 0, 0.685);
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+
+        /* Position the tooltip text - see examples below! */
+        position: absolute;
+        z-index: 1;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+
     .unit-card {
         background-color: rgba(0, 0, 0, 0.309);
         padding: 1rem;
