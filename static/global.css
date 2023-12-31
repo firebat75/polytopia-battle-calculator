@@ -10,26 +10,3 @@ body {
     background: linear-gradient(0deg, rgba(244, 214, 126, 1) 0%, rgba(245, 106, 171, 1) 100%);
     min-height: 100vh;
 }
-
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: linear-gradient(0deg, rgba(244, 214, 126, 1) 0%, rgba(245, 106, 171, 1) 100%);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.437);
-    border-radius: 10px;
-    ;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #ffffffe2;
-    box-shadow: 20px 0px 20px 20px #0ff;
-}
