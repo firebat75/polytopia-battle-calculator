@@ -262,7 +262,6 @@
     /* Tooltip text */
     .tooltip .tooltiptext {
         visibility: hidden;
-        width: 120px;
         background-color: rgba(0, 0, 0, 0.685);
         color: #fff;
         text-align: center;
@@ -272,6 +271,10 @@
         /* Position the tooltip text - see examples below! */
         position: absolute;
         z-index: 1;
+        width: 120px;
+        top: 100%;
+        left: 50%;
+        margin-left: -60px;
     }
 
     /* Show the tooltip text when you mouse over the tooltip container */
